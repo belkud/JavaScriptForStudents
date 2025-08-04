@@ -5,11 +5,23 @@
     <link rel="icon" type="image/svg+xml" href="/public/logo_book.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="src/style.css">
-    <title>For students</title>
+    <title >For students</title>
   </head>
   <body>
 
-    <div>Test</div>
+    <h4>При вводе пользователем телефона должны автоматически вводится скобки и тире, реализовать кнопку очистить
+      номер. Важно! Все кнопки кроме цифр блокируются.</h4>
+    <form id="formId" style="display: flex; flex-direction: column; gap: 10px;">
+      <fieldset style="border: 2px solid red; width: 180px;">
+        <legend>Info</legend>
+  
+        <div style="color: lightgrey;">Введите номер телефона</div>
+        <input  type="text" name="" maxlength="18" id="telephone_number" placeholder="+7 (___) ___-__-__">
+        <button id="clean_number">
+          <div id="button_line"></div>Очистить номер
+        </button>
+      </fieldset>
+    </form>
 
 
     <script type="module" src="src/main.ts"></script>
