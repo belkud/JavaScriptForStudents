@@ -15,13 +15,10 @@ telephone_number.addEventListener('keydown',(e:any)=> {
         } else if(numbers==12 || numbers==15) {
             telephone_number.value+='-'
         }   
-    } else if (e.key !='Backspace') {
+    } else if (e.key !='Backspace' && e.key !='ArrowLeft' && e.key !='ArrowRight' && e.key !='Delete') {
         e.preventDefault()
     } 
-    // else if (e.key =' ') {
-    //  telephone_number.value+='+'
-    // }
-    // console.log(e);
+    console.log(e.key);
     
 })
 
@@ -32,3 +29,4 @@ clean_number.addEventListener('click', (e)=> {
     telephone_number.value=''
 })
 
+//! https://jsonplaceholder.typicode.com/users
