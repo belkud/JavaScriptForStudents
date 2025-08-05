@@ -24,8 +24,35 @@
       </fieldset>
     </form>
 
-    <input type="text" placeholder="text">
-    <input maxlength="8" type="number" placeholder="number">
+    
+<h3>All users:</h3>
+<div id="all_users"></div>
+
+<h3>User info:</h3>
+  <div id="user_info"></div>
+
+<style>
+  #all_users {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      gap: 10px;
+      margin-top: 25px;
+  }
+
+  #all_users>div {
+    border: 1px solid #000;
+    color: red;
+    width: 180px;
+    padding: 10px;
+  }
+  #all_users>div:hover {
+    background: pink;
+    transition: .3s;
+    cursor: pointer;
+  }
+</style>
+
     <script type="module" src="src/main.ts"></script>
   </body>
 </html>

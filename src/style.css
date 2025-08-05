@@ -48,3 +48,8 @@ body {
       
     }
   }
+
+
+  #user_names {
+    border: 1px solid #000;
+  }
