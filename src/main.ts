@@ -18,8 +18,6 @@ telephone_number.addEventListener('keydown',(e:any)=> {
     } else if (e.key !='Backspace' && e.key !='ArrowLeft' && e.key !='ArrowRight' && e.key !='Delete') {
         e.preventDefault()
     } 
-    console.log(e.key);
-    
 })
 
 clean_number.addEventListener('click', (e)=> {
@@ -30,3 +28,4 @@ clean_number.addEventListener('click', (e)=> {
 })
 
 //! https://jsonplaceholder.typicode.com/users
+

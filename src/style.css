@@ -16,7 +16,7 @@ body {
     transition: .2s;
     position: absolute;
     overflow: hidden;
-    margin-left: 120px;
+    margin-left: 80px;
     color: lightgray;
     background: linear-gradient(45deg, red, blue);
   }
