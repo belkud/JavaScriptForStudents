@@ -55,7 +55,6 @@ let users_name = all_users.children
 
 for (let i = 0; i < users_name.length; i++) {
     users_name[i].addEventListener('click', ()=> {
-
         user_info[0].innerHTML = `${user[i].name}</div>`
         user_info[1].innerHTML = `${user[i].username}</div>`
         user_info[2].innerHTML = `${user[i].address.city + ', ' + user[i].address.street}</div>`
@@ -78,29 +77,33 @@ showUsers()
 
 
 
+
+
+
+
+
+let user_posts = document.querySelector('#user_posts') as HTMLDivElement
+
+async function showUsersPost() {
+        try {
 let show_posts = document.querySelector('#show_posts') as HTMLButtonElement
 let posts = await fetch('https://jsonplaceholder.typicode.com/posts')
 let user_post = await posts.json()
-console.log(user_post[5]);
-
-
+                   
 show_posts.addEventListener('click', ()=> {
     console.log('test');
+    console.log(JSON.stringify(user_post));
     
-})
-
-
-
-
-
-async function showUsersPost() {
-        
+})  
+        } catch (e) {
+            console.log('Ошибка');
+            user_posts.innerHTML = 'Ошибка данных'
+        }
 }
 
 showUsersPost ()
 
 
-// show_posts.style.sc = '1000px'
 
 
 
@@ -108,7 +111,14 @@ showUsersPost ()
 
 
 
+show_posts.scrollIntoView ({
+    block:'center',
+    // behavior: 'smooth'
+})
 
 
+
+
+ 
 
 
