@@ -38,9 +38,7 @@ clean_number.addEventListener('click', (e)=> {
 let user_info = document.querySelectorAll('table tr td:last-child') as any
 
 async function tests() {
-    
-}
-
+ 
 try {
     
 
@@ -74,5 +72,8 @@ for (let i = 0; i < users_name.length; i++) {
     console.log('Сервер не передал данные');
        
 }
+   
+}
+
 
 tests()
