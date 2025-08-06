@@ -37,7 +37,11 @@ clean_number.addEventListener('click', (e)=> {
 
 let user_info = document.querySelectorAll('table tr td:last-child') as any
 
-// try {
+async function tests() {
+    
+}
+
+try {
     
 
 let users = await fetch('https://jsonplaceholder.typicode.com/users')
@@ -66,9 +70,9 @@ for (let i = 0; i < users_name.length; i++) {
     
 }
 
-// } catch (e) {
-    // console.log('Сервер не передал данные');
+} catch (e) {
+    console.log('Сервер не передал данные');
        
-// }
+}
 
-
+tests()
