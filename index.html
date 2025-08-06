@@ -29,7 +29,37 @@
 <div id="all_users"></div>
 
 <h3>User info:</h3>
-  <div id="user_info"></div>
+  <div id="user_info">
+    <table>
+      <tr>
+        <td>Имя:</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Фамилия:</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Адрес:</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Почта:</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Телефон:</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Вебсайт:</td>
+        <td></td>
+      </tr>
+    </table>
+    
+
+  </div>
+<!--! имя фамилия адрес почта телефон вебсайт -->
 
 <style>
   #all_users {
@@ -50,6 +80,10 @@
     background: pink;
     transition: .3s;
     cursor: pointer;
+  }
+
+  table tr:nth-child(3) td:last-child {
+    /* color: red; */
   }
 </style>
 
