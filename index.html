@@ -10,8 +10,8 @@
   <body>
     
     <!-- <div> с файла JS_DZ_Modul_3_Week_11.html (JavaScript)</div> -->
-    <h4>При вводе пользователем телефона должны автоматически вводится скобки и тире, реализовать кнопку очистить
-      номер. Важно! Все кнопки кроме цифр блокируются.</h4>
+    <h2 class="title" style="margin-top: 30px;">При вводе пользователем телефона должны автоматически вводится скобки и тире, реализовать кнопку очистить
+      номер. Важно! Все кнопки кроме цифр блокируются.</h2>
     <form id="formId" style="display: flex; flex-direction: column; gap: 10px;">
       <fieldset style="border: 2px solid red; width: 180px;">
         <legend>Telephone</legend>
@@ -24,13 +24,13 @@
       </fieldset>
     </form>
 
-    
-<h3>All users:</h3>
-<div id="all_users"></div>
+
+<h2 class="title">Отправка GET-запросов, получение данных с сервера</h2>
+  <h3>All users:</h3>
+  <div id="all_users"></div>
 
 <h3>User info:</h3>
-  <div id="user_info">
-    <table>
+    <table id="user_info">
       <tr>
         <td>Имя:</td>
         <td></td>
@@ -56,16 +56,12 @@
         <td></td>
       </tr>
     </table>
-    
-
-  </div>
-<!--! имя фамилия адрес почта телефон вебсайт -->
 
 <style>
   #all_users {
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-evenly;
+      /* justify-content: space-evenly; */
       gap: 10px;
       margin-top: 25px;
   }
@@ -73,13 +69,29 @@
   #all_users>div {
     border: 1px solid #000;
     color: red;
-    width: 180px;
+    width: 165px;
     padding: 10px;
   }
   #all_users>div:hover {
     background: pink;
     transition: .3s;
     cursor: pointer;
+  }
+
+  table {
+    border: 1px solid #000;
+    border-collapse: collapse;
+    font-size: 1.5em;
+  }
+  
+  table td {
+    border: 1px solid #000;
+    padding: 5px;
+    cursor: pointer;
+  }
+
+  table tr:hover {
+   background: pink;
   }
 
   /* table tr:nth-child(3) td:last-child { */
