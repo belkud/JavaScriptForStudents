@@ -36,23 +36,22 @@ clean_number.addEventListener('click', (e)=> {
 //! Реализовать веб-страницу «Каталог копирайтеров».
 
 let user_info = document.querySelectorAll('table tr td:last-child') as any
+let all_users = document.querySelector('#all_users') as HTMLDivElement
 
-async function tests() {
+async function showUsers() {
  
 try {
-    
 
 let users = await fetch('https://jsonplaceholder.typicode.com/users')
 let user = await users.json()
 
-let all_users = document.querySelector('#all_users') as HTMLDivElement
 
 for (let i = 0; i < user.length; i++) {
     all_users.innerHTML+= `<div>${user[i].name}<div>`
 }
 
 let users_name = all_users.children
-console.log(users_name);
+// console.log(users_name);
 
 for (let i = 0; i < users_name.length; i++) {
     users_name[i].addEventListener('click', ()=> {
@@ -63,17 +62,53 @@ for (let i = 0; i < users_name.length; i++) {
         user_info[3].innerHTML = `${user[i].email}</div>`
         user_info[4].innerHTML = `${user[i].phone}</div>`
         user_info[5].innerHTML = `${user[i].website}</div>`
-        // console.log(e.target);
     })
-    
 }
+
 
 } catch (e) {
     console.log('Сервер не передал данные');
-       
+       all_users.innerHTML+= 'Сервер не передал данные (перезагрузите страницу)'
 }
    
 }
 
 
-tests()
+showUsers()
+
+
+
+let show_posts = document.querySelector('#show_posts') as HTMLButtonElement
+let posts = await fetch('https://jsonplaceholder.typicode.com/posts')
+let user_post = await posts.json()
+console.log(user_post[5]);
+
+
+show_posts.addEventListener('click', ()=> {
+    console.log('test');
+    
+})
+
+
+
+
+
+async function showUsersPost() {
+        
+}
+
+showUsersPost ()
+
+
+// show_posts.style.sc = '1000px'
+
+
+
+
+
+
+
+
+
+
+
