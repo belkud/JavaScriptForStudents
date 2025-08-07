@@ -37,6 +37,8 @@ clean_number.addEventListener('click', (e)=> {
 
 let user_info = document.querySelectorAll('table tr td:last-child') as any
 let all_users = document.querySelector('#all_users') as HTMLDivElement
+let user_number = 0
+let user_posts = document.querySelector('#user_posts') as HTMLDivElement
 
 async function showUsers() {
  
@@ -46,12 +48,14 @@ let users = await fetch('https://jsonplaceholder.typicode.com/users')
 let user = await users.json()
 
 
+
+   
+
 for (let i = 0; i < user.length; i++) {
     all_users.innerHTML+= `<div>${user[i].name}<div>`
 }
 
 let users_name = all_users.children
-// console.log(users_name);
 
 for (let i = 0; i < users_name.length; i++) {
     users_name[i].addEventListener('click', ()=> {
@@ -61,6 +65,10 @@ for (let i = 0; i < users_name.length; i++) {
         user_info[3].innerHTML = `${user[i].email}</div>`
         user_info[4].innerHTML = `${user[i].phone}</div>`
         user_info[5].innerHTML = `${user[i].website}</div>`
+        
+        user_number= user[i].id
+        console.log(user_number);
+        user_posts.innerHTML=''
     })
 }
 
@@ -78,24 +86,27 @@ showUsers()
 
 
 
-
-
-
-
-let user_posts = document.querySelector('#user_posts') as HTMLDivElement
-
 async function showUsersPost() {
         try {
 let show_posts = document.querySelector('#show_posts') as HTMLButtonElement
 let posts = await fetch('https://jsonplaceholder.typicode.com/posts')
 let user_post = await posts.json()
-                   
 show_posts.addEventListener('click', ()=> {
-    console.log('test');
-    console.log(JSON.stringify(user_post));
-    
+    for (let i = 0; i < user_post.length; i++) {
+        if (JSON.stringify(user_post[i].userId) ==`${user_number}`) {
+            
+            console.log(user_post[i]);
+            user_posts.innerHTML+= `
+            <div class="users_post">
+                <div><b>${user_post[i].id}</b></div><br>
+                <div><b>${user_post[i].title}</b></div><br>
+                <div>${user_post[i].body}</div>
+            </div>`
+        }
+    }
 })  
-        } catch (e) {
+
+} catch (e) {
             console.log('Ошибка');
             user_posts.innerHTML = 'Ошибка данных'
         }
@@ -111,10 +122,10 @@ showUsersPost ()
 
 
 
-show_posts.scrollIntoView ({
-    block:'center',
-    // behavior: 'smooth'
-})
+// show_posts.scrollIntoView ({
+//     block:'center',
+//     // behavior: 'smooth'
+// })
 
 
 

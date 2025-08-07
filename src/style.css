@@ -56,7 +56,11 @@ body {
   color: rgb(101, 101, 101);
 }
 
-
+.users_post {
+  border: 1px solid black;
+  padding: 10px;
+  margin-top: 10px;
+}
 
 
 
