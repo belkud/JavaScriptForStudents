@@ -35,24 +35,23 @@ clean_number.addEventListener('click', (e)=> {
 
 //! Реализовать веб-страницу «Каталог копирайтеров».
 
-let user_info = document.querySelectorAll('table tr td:last-child') as any
+let user_info = document.querySelectorAll('#user_info tr td:last-child') as any
 let all_users = document.querySelector('#all_users') as HTMLDivElement
+let user_table = document.querySelector('#user_info') as HTMLTableElement
 let user_number = 0
 let user_posts = document.querySelector('#user_posts') as HTMLDivElement
+let show_posts = document.querySelector('#show_posts') as HTMLButtonElement
 
 async function showUsers() {
  
 try {
-
-let users = await fetch('https://jsonplaceholder.typicode.com/users')
-let user = await users.json()
-
-
-
-   
-
+    let users = await fetch('https://jsonplaceholder.typicode.com/users')
+    let user = await users.json()
+    
+    
 for (let i = 0; i < user.length; i++) {
     all_users.innerHTML+= `<div>${user[i].name}<div>`
+    
 }
 
 let users_name = all_users.children
@@ -69,6 +68,8 @@ for (let i = 0; i < users_name.length; i++) {
         user_number= user[i].id
         console.log(user_number);
         user_posts.innerHTML=''
+        user_table.style.display = 'block'
+        show_posts.style.display = 'block'
     })
 }
 
