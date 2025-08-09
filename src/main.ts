@@ -48,7 +48,6 @@ try {
     let users = await fetch('https://jsonplaceholder.typicode.com/users')
     let user = await users.json()
     
-  console.log(...user[0] )
     
 for (let i = 0; i < user.length; i++) {
     all_users.innerHTML+= `<div>${user[i].name}<div>`
@@ -76,7 +75,6 @@ for (let i = 0; i < users_name.length; i++) {
 }
 
 } catch (e) {
-    console.log('Сервер не передал данные');
        all_users.innerHTML+= 'Сервер не передал данные (перезагрузите страницу)'
 }
 }
@@ -89,14 +87,11 @@ showUsers()
 
 async function showUsersPost() {
         try {
-let show_posts = document.querySelector('#show_posts') as HTMLButtonElement
 let posts = await fetch('https://jsonplaceholder.typicode.com/posts')
 let user_post = await posts.json()
 show_posts.addEventListener('click', ()=> {
     for (let i = 0; i < user_post.length; i++) {
         if (JSON.stringify(user_post[i].userId) ==`${user_number}`) {
-            
-            console.log(user_post[i]);
             user_posts.innerHTML+= `
             <div class="users_post">
                 <div><b>${user_post[i].title}</b></div><br>
@@ -132,32 +127,78 @@ show_posts.scrollIntoView ({
  
 
 
-// let test = [
-//   {
-//     "userId": 1,
-//     "id": 1,
-//     "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
-//     "body": "quia et suscipitsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
-//   },
-//   {
-//     "userId": 1,
-//     "id": 2,
-//     "title": "qui est esse",
-//     "body": "est rerum tempore vitaesequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nulla"
-//   },
-//   {
-//     "userId": 1,
-//     "id": 3,
-//     "title": "ea molestias quasi exercitationem repellat qui ipsa sit aut",
-//     "body": "et iusto sed quo iurevoluptatem occaecati omnis eligendi aut ad\nvoluptatem doloribus vel accusantium quis pariatur\nmolestiae porro eius odio et labore et velit aut"
-//   },
-//   {
-//     "userId": 1,
-//     "id": 4,
-//     "title": "eum et est occaecati",
-//     "body": "ullam et saepe reiciendis voluptatem adipiscisit amet autem assumenda provident rerum culpa\nquis hic commodi nesciunt rem tenetur doloremque ipsam iure\nquis sunt voluptatem rerum illo velit"
-//   },]
+let test = [
+  {
+    "userId": 1,
+    "id": 1,
+    "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+    "body": "quia et suscipitsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
+  },
+  {
+    "userId": 1,
+    "id": 2,
+    "title": "qui est esse",
+    "body": "est rerum tempore vitaesequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nulla"
+  },
+  {
+    "userId": 1,
+    "id": 3,
+    "title": "ea molestias quasi exercitationem repellat qui ipsa sit aut",
+    "body": "et iusto sed quo iurevoluptatem occaecati omnis eligendi aut ad\nvoluptatem doloribus vel accusantium quis pariatur\nmolestiae porro eius odio et labore et velit aut"
+  },
+  {
+    "userId": 1,
+    "id": 4,
+    "title": "eum et est occaecati",
+    "body": "ullam et saepe reiciendis voluptatem adipiscisit amet autem assumenda provident rerum culpa\nquis hic commodi nesciunt rem tenetur doloremque ipsam iure\nquis sunt voluptatem rerum illo velit"
+  },]
 
 
-// ;
-  
+// console.log(JSON.stringify(test));
+// console.log(...test);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// let dataTest = await fetch ('https://jsonplaceholder.typicode.com/posts')
+// console.log(await dataTest.json());
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
