@@ -116,46 +116,31 @@ showUsersPost ()
 
 
 
-show_posts.scrollIntoView ({
-    block:'center',
-    // behavior: 'smooth'
-})
+
+
+// JSON_container.scrollIntoView ({
+//     block:'end',
+//     behavior: 'smooth'
+// })
 
 
 
 
- 
 
 
-let test = [
-  {
-    "userId": 1,
-    "id": 1,
-    "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
-    "body": "quia et suscipitsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
-  },
-  {
-    "userId": 1,
-    "id": 2,
-    "title": "qui est esse",
-    "body": "est rerum tempore vitaesequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nulla"
-  },
-  {
-    "userId": 1,
-    "id": 3,
-    "title": "ea molestias quasi exercitationem repellat qui ipsa sit aut",
-    "body": "et iusto sed quo iurevoluptatem occaecati omnis eligendi aut ad\nvoluptatem doloribus vel accusantium quis pariatur\nmolestiae porro eius odio et labore et velit aut"
-  },
-  {
-    "userId": 1,
-    "id": 4,
-    "title": "eum et est occaecati",
-    "body": "ullam et saepe reiciendis voluptatem adipiscisit amet autem assumenda provident rerum culpa\nquis hic commodi nesciunt rem tenetur doloremque ipsam iure\nquis sunt voluptatem rerum illo velit"
-  },]
+let JSON_container = document.querySelectorAll('#JSON_container') 
+console.log(JSON_container.length);
 
 
-// console.log(JSON.stringify(test));
-// console.log(...test);
+let our_teams = [
+    {"id": 1, "name": "Katya", "age": 30},
+    {"id": 2, "name": "Tima", "age": 28},
+    {"id": 3, "name": "Shlepa", "age": 23},
+    {"id": 4, "name": "Cucaracha", "age": 26},
+]
+
+JSON_container.innerHTML = JSON.stringify(our_teams)
+// console.log(our_teams);
 
 
 
