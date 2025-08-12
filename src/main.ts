@@ -226,12 +226,12 @@ let JSON_container = document.querySelectorAll('#JSON_container')
 console.log(JSON_container.length);
 
 
-let our_teams = [
-    {"id": 1, "name": "Katya", "age": 30},
-    {"id": 2, "name": "Tima", "age": 28},
-    {"id": 3, "name": "Shlepa", "age": 23},
-    {"id": 4, "name": "Cucaracha", "age": 26},
-]
+// let our_teams = [
+//     {"id": 1, "name": "Katya", "age": 30},
+//     {"id": 2, "name": "Tima", "age": 28},
+//     {"id": 3, "name": "Shlepa", "age": 23},
+//     {"id": 4, "name": "Cucaracha", "age": 26},
+// ]
 
 // JSON_container.innerHTML = JSON.stringify(our_teams)
 // console.log(our_teams);
