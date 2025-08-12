@@ -55,6 +55,7 @@ for (let i = 0; i < user.length; i++) {
 }
 
 let users_name = all_users.children
+console.log(users_name);
 
 for (let i = 0; i < users_name.length; i++) {
     users_name[i].addEventListener('click', ()=> {
@@ -139,7 +140,7 @@ let our_teams = [
     {"id": 4, "name": "Cucaracha", "age": 26},
 ]
 
-JSON_container.innerHTML = JSON.stringify(our_teams)
+// JSON_container.innerHTML = JSON.stringify(our_teams)
 // console.log(our_teams);
 
 
