@@ -225,8 +225,8 @@ showUsersPost ()
 
 
 
-let JSON_container = document.querySelectorAll('#JSON_container') 
-console.log(JSON_container.length);
+// let JSON_container = document.querySelectorAll('#JSON_container') 
+// console.log(JSON_container);
 
 
 // let our_teams = [
@@ -242,43 +242,8 @@ console.log(JSON_container.length);
 
 
 
-
-
-
-
-
-
-
-
-
-
 // let dataTest = await fetch ('https://jsonplaceholder.typicode.com/posts')
 // console.log(await dataTest.json());
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
