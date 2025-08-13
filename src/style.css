@@ -2,8 +2,13 @@ body {
   background: lightgray;
 }
 
+.title {
+  margin-top: 90px;
+  color: rgb(101, 101, 101);
+}
 
-/* Задание с телефонным номером */
+
+/*! Задание с телефонным номером */
 #telephone_number {
   width: 180px;
   font-size: 1.3em;
@@ -48,13 +53,77 @@ body {
       
     }
   }
-/* Конец задания с телефонным номером */
+/* ! Конец задания с телефонным номером */
 
 
-.title {
-  margin-top: 90px;
-  color: rgb(101, 101, 101);
+
+/* ! Реализовать веб-страницу «Каталог копирайтеров». */
+#all_users {
+      display: flex;
+      flex-wrap: wrap;
+      /* justify-content: space-evenly; */
+      gap: 10px;
+      margin-top: 25px;
+  }
+
+  #all_users>div {
+    border: 1px solid #000;
+    color: red;
+    width: 165px;
+    padding: 10px;
+  }
+  #all_users>div:hover {
+    background: pink;
+    transition: .3s;
+    cursor: pointer;
+  }
+
+  #user_info {
+    border-collapse: collapse;
+    font-size: 1.5em;
+    display: none;
+  }
+  
+  #user_info td {
+    border: 1px solid #000;
+    padding: 5px;
+    cursor: pointer;
+  }
+
+  #user_info tr:hover {
+   background: pink;
+  }
+
+  /* table tr:nth-child(3) td:last-child { */
+    /* color: red; */
+  /* } */
+
+#show_posts {
+  width: 330px;
+  margin-top: 20px;
+  height: 30px;
+  border-radius: 5px;
+  font-size: 1.2em;
+  display: none;
+  cursor: pointer;
 }
+
+#show_posts:hover {
+  background-color: orange;
+  transition: .3s;  
+}
+
+.users_post {
+  border: 1px solid black;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+/* ! Реализовать веб-страницу «Каталог копирайтеров», завершение */
+
+
+
+
 
 
 
