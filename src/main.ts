@@ -128,6 +128,7 @@ console.log(data.value.split('-').reverse().join('.'));
 
 
 
+
 //! Реализовать веб-страницу «Каталог копирайтеров».
 
 let user_info = document.querySelectorAll('#user_info tr td:last-child') as any
