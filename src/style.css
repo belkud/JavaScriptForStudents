@@ -122,7 +122,15 @@ body {
 /* ! Реализовать веб-страницу «Каталог копирайтеров», завершение */
 
 
+.margin {
+  margin-left: -30px;
+  display: inline-block;
+}
 
+.margin2 {
+  margin-left: -50px;
+  display: inline-block;
+}
 
 
 

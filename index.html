@@ -28,14 +28,222 @@
 
 
 
+<!-- !!!!!!!!!!!!!!!!!! задание с поездом!!!!!!!!!!!!!!!!!!!! -->
+
+<form id="container_with_tickets">
+  <div style="display: flex; gap:25px;">
+      <div>
+        <label for="directions">Direction</label>
+        <select name="directions" id="directions">
+          <option value="Sochi - Moscow">Sochi - Moscow</option>
+          <option value="Sochi - Saint-Peterburg">Sochi - Saint-Peterburg</option>
+          <option value="Sochi - Volgograd">Sochi - Volgograd</option>
+          <option value="Sochi - Novgorod">Sochi - Novgorod</option>
+          <option value="Sochi - Kaliningrad">Sochi - Kaliningrad</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="">Date</label>
+        <input type="date" name="data"  id="data">
+      </div>
+<img id="logo_rzd" src="public/logo_rzd.png" alt="">
+
+  </div>
+
+  <hr>
+
+  <div id="seats">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</div>
+
+<img id="train_img" src="public/train_no_bg.png" alt="" srcset="">
+
+<div style="display: flex; align-items: flex-end">
+  <div id="total">Total: </div>
+  <input id="book" type="submit" value="book">
+</div>
+</form>
 
 
+<div id="tickets_chart">
+  <h2>My tickets</h2>
+  <div id="passangers_info">
+    <div><b>Direction</b></div>
+    <div><b>Date</b></div>
+    <div><b>Seat</b></div>
+  </div>
+</div>
+
+
+<style>
+
+
+  #container_with_tickets {
+    margin-top: 100px;
+    background: rgb(44, 195, 229);
+    padding: 30px;
+    border-radius: 10px;
+    width: 850px;
+    margin-left: 50px;
+    overflow: hidden;
+    font-size: 1.5em;
+    /* min-height: 100px; */
+  }
+
+  #seats {
+    border: 1px solid rgb(97, 96, 96);
+    border-radius: 10px;
+    padding: 15px; 
+    display: flex;
+    gap: 10px;
+  }
+
+  #seats>div {
+    border: 1px solid rgb(97, 96, 96);
+    border-radius: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 108px;
+    gap: 8px;
+    padding: 3px;  
+  }
+
+  #seats>div>div{
+    /* border: 1px solid red; */
+    display: flex;
+   
+    align-items: center;
+    width: 41px;
+    height: 25px;
+  }
+
+  #book {
+    display: flex;
+    margin-left: auto;
+    min-width: 150px;
+    margin-top: 10px;
+    font-size: 1.05em;
+  }
+
+  #tickets_chart {
+    margin: 50px;
+  }
+
+  #tickets_chart>div {
+    display: flex;
+  }
+  
+  #tickets_chart>div>div {
+    border: 1px solid #000;
+    font-size: 1.5em;
+    padding: 10px;
+    width: 240px;
+  }
+
+  #logo_rzd {
+    width: 100px;
+    filter: drop-shadow(3px 3px 2px aliceblue);
+    margin-left: auto;
+    margin-top: -20px;
+  }
+
+  #train_img {
+    width: 600px;
+    border-bottom: 1px solid #000;
+    padding-left: 800px;
+    margin-top: 10px;
+    margin-left: -20px;
+    animation: move_train 10s forwards;
+    /* animation: move_train 5s timing-function iteration-count direction fill-mode; */
+  }
+
+  @keyframes move_train {
+    100% {
+        margin-left: -1315px;
+    }
+  }
+
+  
+input:focus, select:focus {
+    /* outline: 2px solid red; */
+    background-color: pink;
+}
+
+</style>
+
+
+
+
+
+<h2 class="title">Реализовать JSON formatter. (форматирование любого JSON текста)</h2>
+
+<div id="JSON_container">
+  <div>
+    <label><b>Enter JSON data:</b></label>
+    <textarea id="user_text"></textarea>
+  </div>  
+  <button id="button_format_text">></button>
+  <div>
+    <label><b>Formatted JSON data: </b></label>
+    <div id="formated_text"></div>
+  </div>  
+  
+</div>
+
+<style>
+  #JSON_container {
+    display: flex;
+    background-color: rgb(182, 215, 204);
+    padding: 10px;
+    width: 800px;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid #000;
+  }
+
+  #JSON_container>div {
+    display: flex;
+    flex-direction: column;
+    height: 280px;
+    width: 45%
+  }
+
+  #JSON_container button {
+    height: 280px;
+    padding-top: 20px;
+    font-weight: bold;
+    /* background: yellow; */
+  }
+  
+   #JSON_container>div>div, #JSON_container textarea{
+    height: 255px;
+    border: 1px solid #000;
+    background-color: lightskyblue;
+  }
+  #JSON_container>div:nth-child(1)>input {
+    background: palegreen;
+  }
+
+  #formated_text {
+      padding-left: 50px;
+  }
+
+
+
+</style>
 
     
-<!-- 
 
 
-<h2 class="title">Отправка GET-запросов, получение данных с сервера</h2>
+<!--! Реализовать веб-страницу «Каталог копирайтеров». -->
+<h2 class="title">Отправка GET-запросов, получение данных с сервера(Реализовать веб-страницу «Каталог копирайтеров»)</h2>
   <h3>All users:</h3>
   <div id="all_users"></div>
 
