@@ -310,7 +310,7 @@ button_format_text.addEventListener('click',()=> {
 
 
  
-let resp = await fetch('http://localhost:5173/JavaScriptForStudents/')
+fetch('http://localhost:5173/JavaScriptForStudents/')
 
 //! в первой строке всегда получает статус
 // .then((resp)=> resp.text())
@@ -321,7 +321,7 @@ let resp = await fetch('http://localhost:5173/JavaScriptForStudents/')
 
 .then((resp)=> resp.blob())
 .then((data)=>console.log(data))
-.catch((error)=>console.log('Где-то ошибка'))
+.catch((error)=>console.log(error + 'Где-то ошибка'))
 .finally(()=>console.log('finish'))
 
 
