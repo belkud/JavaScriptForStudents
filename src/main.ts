@@ -95,7 +95,7 @@ for (let i = 0; i < tickets_input.length; i++) {
   console.log('test');
   console.log(totalAcc);
   
-    total.innerHTML = `Total: Общая стоимость ${totalAcc} рублей`
+    total.innerHTML = `Стоимость ${totalAcc==1600 ? 'билета' : 'билетов'} : ${totalAcc} рублей`
 } 
 
 
@@ -151,7 +151,7 @@ for (let i = 0; i < user.length; i++) {
 }
 
 let users_name = all_users.children
-console.log(users_name);
+// console.log(users_name);
 
 for (let i = 0; i < users_name.length; i++) {
     users_name[i].addEventListener('click', ()=> {
@@ -293,6 +293,44 @@ button_format_text.addEventListener('click',()=> {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+let resp = await fetch('http://localhost:5173/JavaScriptForStudents/')
+
+//! в первой строке всегда получает статус
+// .then((resp)=> resp.text())
+// .then((data)=> console.log(data))
+
+
+
+
+.then((resp)=> resp.blob())
+.then((data)=>console.log(data))
+.catch((error)=>console.log('Где-то ошибка'))
+.finally(()=>console.log('finish'))
+
+
+
+// if (resp.ok) {
+//     console.log('успешно');
+// } else {
+//     console.log('Ошибка');
+// }
 
 
 

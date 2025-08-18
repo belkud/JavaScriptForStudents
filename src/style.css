@@ -57,6 +57,149 @@ body {
 
 
 
+
+/* !!!!!!!!!!!!!!!!!! задание с поездом!!!!!!!!!!!!!!!!!!!! */
+
+  #container_with_tickets {
+    margin-top: 50px;
+    background: rgb(44, 195, 229);
+    padding: 30px;
+    border-radius: 10px;
+    width: 850px;
+    margin-left: 10px;
+    overflow: hidden;
+    font-size: 1.5em;
+    /* min-height: 100px; */
+  }
+
+  #seats {
+    border: 1px solid rgb(97, 96, 96);
+    border-radius: 10px;
+    padding: 15px; 
+    display: flex;
+    gap: 10px;
+  }
+
+  #seats>div {
+    border: 1px solid rgb(97, 96, 96);
+    border-radius: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 108px;
+    gap: 8px;
+    padding: 3px;  
+  }
+
+  #seats>div>div{
+    /* border: 1px solid red; */
+    display: flex;
+   
+    align-items: center;
+    width: 41px;
+    height: 25px;
+  }
+
+  #book {
+    display: flex;
+    margin-left: auto;
+    min-width: 150px;
+    margin-top: 10px;
+    font-size: 1.05em;
+  }
+
+  #tickets_chart {
+    margin: 50px;
+  }
+
+  #tickets_chart>div {
+    display: flex;
+  }
+  
+  #tickets_chart>div>div {
+    border: 1px solid #000;
+    font-size: 1.5em;
+    padding: 10px;
+    width: 240px;
+  }
+
+  #logo_rzd {
+    width: 100px;
+    filter: drop-shadow(3px 3px 2px aliceblue);
+    margin-left: auto;
+    margin-top: -20px;
+  }
+
+  #train_img {
+    width: 600px;
+    border-bottom: 1px solid #000;
+    padding-left: 800px;
+    margin-top: 10px;
+    margin-left: -20px;
+    animation: move_train 10s forwards;
+    /* animation: move_train 5s timing-function iteration-count direction fill-mode; */
+  }
+
+  @keyframes move_train {
+    100% {
+        margin-left: -1315px;
+    }
+  }
+
+  
+input:focus, select:focus {
+    /* outline: 2px solid red; */
+    background-color: pink;
+}
+
+
+/* !!!!!!!!!!!!!!!!!! задание с поездом, завершение!!!!!!!!!!!!!!!!!!!! */
+
+
+
+
+/* !!!!!!!!!!!!!!!!!! задание с JSON formatter!!!!!!!!!!!!!!!!!!!! */
+#JSON_container {
+    display: flex;
+    background-color: rgb(182, 215, 204);
+    padding: 10px;
+    width: 800px;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid #000;
+  }
+
+  #JSON_container>div {
+    display: flex;
+    flex-direction: column;
+    height: 280px;
+    width: 45%
+  }
+
+  #JSON_container button {
+    height: 280px;
+    padding-top: 20px;
+    font-weight: bold;
+    /* background: yellow; */
+  }
+  
+   #JSON_container>div>div, #JSON_container textarea{
+    height: 255px;
+    border: 1px solid #000;
+    background-color: lightskyblue;
+  }
+  #JSON_container>div:nth-child(1)>input {
+    background: palegreen;
+  }
+
+  #formated_text {
+      padding-left: 50px;
+  }
+
+/* !!!!!!!!!!!!!!!!!! задание с JSON formatter, завершение!!!!!!!!!!!!!!!!!!!! */
+
+
+
+
 /* ! Реализовать веб-страницу «Каталог копирайтеров». */
 #all_users {
       display: flex;
@@ -94,9 +237,6 @@ body {
    background: pink;
   }
 
-  /* table tr:nth-child(3) td:last-child { */
-    /* color: red; */
-  /* } */
 
 #show_posts {
   width: 330px;
