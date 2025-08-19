@@ -57,6 +57,56 @@ body {
 
 
 
+/*! Задание с банковской картой */
+#card {
+    width: 350px;
+    height: 200px;
+    margin-left: 30px;
+    margin-top: 50px;
+    border-radius: 10px;
+    background-color: rgb(172, 204, 215);
+    background-image: url(public/moon_flag.png);
+    background-size: 150px;
+    background-repeat: no-repeat;
+    background-position: 245px 60px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#card_info {
+    text-transform: uppercase;
+    background-color: rgb(190, 38, 38);
+    color: aliceblue;
+    padding: 5px 20px;
+    border-radius: 5px 15px;
+    width: 180px;
+}
+
+#card input {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    background-color: rgb(195, 215, 222);
+    border-color: transparent;
+    border-bottom: 1px solid;
+}
+
+#card_inputs input{
+    width: 60%;
+    text-align: center;
+}
+
+#card_inputs div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+/* ! Конец задания с банковской картой */
+
+
 
 /* !!!!!!!!!!!!!!!!!! задание с поездом!!!!!!!!!!!!!!!!!!!! */
 

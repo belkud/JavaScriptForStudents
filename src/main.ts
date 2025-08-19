@@ -27,6 +27,19 @@ clean_number.addEventListener('click', (e)=> {
 })
 
 
+// ! Задание с банковской картой */
+
+let card_inputs = document.querySelectorAll('#card_inputs input') as any
+
+let date = new Date()
+card_inputs[1].placeholder = date.getFullYear()
+console.log(card_inputs[0].placeholder = `${date.getDate()}/${date.getMonth() < 9 ? '0' : ''}${date.getMonth()+1}`)
+
+
+
+
+// ! Конец задания с банковской картой */
+
 
 // //!!!!!!!!!!!!!!!!!! задание с поездом!!!!!!!!!!!!!!!!!!!!
 
