@@ -44,15 +44,15 @@
     <div id="card_inputs" style="display: flex; align-items: flex-end; width: 72%;">
         <div>
             <label for="expire_day_month">Expire date</label>
-            <input type="number" inputmode="numeric" pattern="[0-9]*" id="expire_day_month" name="expire_day_month"  placeholder="02">
+            <input type="text" maxlength="5" inputmode="numeric"  id="expire_day_month" name="expire_day_month"  placeholder="02">
         </div>    
         <div>
             <label for="year"></label>
-            <input id="year" type="number">
+            <input id="year" maxlength="4" type="text">
         </div>    
         <div>
             <label for="password">CVV/CVN</label>
-            <input type="password" id="password" placeholder="***">
+            <input type="password" maxlength="3" id="password" placeholder="***">
         </div>    
     </div>
 
@@ -130,7 +130,7 @@ input[type=number] {
 
 <div id="tickets_chart">
   <h2>Купленные билеты:</h2>
-  <div id="passangers_info">
+  <div>
     <div><b>Direction</b></div>
     <div><b>Date</b></div>
     <div><b>Seat</b></div>

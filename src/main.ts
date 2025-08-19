@@ -32,10 +32,31 @@ clean_number.addEventListener('click', (e)=> {
 let card_inputs = document.querySelectorAll('#card_inputs input') as any
 
 let date = new Date()
+card_inputs[0].placeholder = `${date.getDate()}/${date.getMonth() < 9 ? '0' : ''}${date.getMonth()+1}`
 card_inputs[1].placeholder = date.getFullYear()
-console.log(card_inputs[0].placeholder = `${date.getDate()}/${date.getMonth() < 9 ? '0' : ''}${date.getMonth()+1}`)
 
+card_inputs[1].addEventListener('keydown',(e:any)=> {
+    if (e.key>='0' && e.key<='9' || e.key == 'Backspace'|| e.key == 'Tab') {
+    } else {
+        e.preventDefault()
+    }
+})
 
+card_inputs[0].addEventListener('keydown',(e:any)=> {
+    console.log(e);
+    
+    if (e.key>='0' && e.key<='9' || e.key<='/' || e.key == 'Backspace'|| e.key == 'Tab') {
+    } else {
+        e.preventDefault()
+    }
+    if (card_inputs[0].value.length==2) {
+        card_inputs[0].value+= '/'
+    }
+})
+    
+
+    
+    
 
 
 // ! Конец задания с банковской картой */
