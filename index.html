@@ -19,7 +19,7 @@
         <legend>Telephone</legend>
         
         <div style="color: lightgrey;">Введите номер телефона</div>
-        <input  type="text" name="telephone_number" pattern="[0-9]*" maxlength="18" id="telephone_number" placeholder="+7 (___) ___-__-__">
+        <input  type="text" name="telephone_number" inputmode="numeric" pattern="[0-9]*" maxlength="18" id="telephone_number" placeholder="+7 (___) ___-__-__">
         <button id="clean_number">
           <div id="button_line"></div>Очистить номер
         </button>
@@ -30,12 +30,12 @@
 
 
 <!-- !!!!!!!!!!!!!!!!!! задание с банковской картой!!!!!!!!!!!!!!!!!!!! -->
-
+<h2 class="title"> Реализовать корректную форму для ввода данных кредитной карты. </h2>
 <form id="card" method="get">
     <div id="card_info">credit card details</div>
     <div>
         <label for="card_number">Card Number</label>
-        <input type="text" inputmode="numeric" pattern="[0-9]*" id="card_number" name="card_number" placeholder="Введите номер карты">
+        <input type="number"  inputmode="numeric" pattern="[0-9]*" id="card_number" name="card_number" placeholder="Введите номер карты">
     </div>
     <div>
         <label for="your_name">Your name</label>
@@ -44,11 +44,11 @@
     <div id="card_inputs" style="display: flex; align-items: flex-end; width: 72%;">
         <div>
             <label for="expire_day_month">Expire date</label>
-            <input id="expire_day_month" name="expire_day_month" type="number"  placeholder="02">
+            <input type="number" inputmode="numeric" pattern="[0-9]*" id="expire_day_month" name="expire_day_month"  placeholder="02">
         </div>    
         <div>
             <label for="year"></label>
-            <input id="year" type="text">
+            <input id="year" type="number">
         </div>    
         <div>
             <label for="password">CVV/CVN</label>
@@ -57,12 +57,26 @@
     </div>
 
     <div>
-        <input type="submit">
+        <input type="submit" id="card_submit">
     </div>
 
 </form>
-<br><br><br><hr>
+<br><br><br><br><hr>
 <!-- !!!!!!!!!!!!!!!!!! Конец задания с банковской картой!!!!!!!!!!!!!!!!!!!! -->
+
+<style>
+  /* Убирает стрелки в Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Убирает стрелки в Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+</style>
 
 
 <!-- !!!!!!!!!!!!!!!!!! задание с поездом!!!!!!!!!!!!!!!!!!!! -->

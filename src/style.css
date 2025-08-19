@@ -4,7 +4,8 @@ body {
 
 .title {
   margin-top: 90px;
-  color: rgb(101, 101, 101);
+  margin-bottom: 50px;
+  /* color: rgb(101, 101, 101); */
 }
 
 
@@ -59,7 +60,7 @@ body {
 
 /*! Задание с банковской картой */
 #card {
-    width: 350px;
+    width: 390px;
     height: 200px;
     margin-left: 30px;
     margin-top: 50px;
@@ -68,7 +69,7 @@ body {
     background-image: url(public/moon_flag.png);
     background-size: 150px;
     background-repeat: no-repeat;
-    background-position: 245px 60px;
+    background-position: 285px 96px;
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -87,10 +88,11 @@ body {
 #card input {
     display: flex;
     flex-direction: column;
-    width: 60%;
+    width: 65%;
     background-color: rgb(195, 215, 222);
     border-color: transparent;
-    border-bottom: 1px solid;
+    height: 20px;
+    border-bottom: 1px solid rgb(165, 110, 119);
 }
 
 #card_inputs input{
@@ -98,10 +100,23 @@ body {
     text-align: center;
 }
 
+#card_submit{
+  margin-top: 30px;
+  height: 25px !important;
+  border-radius: 5px;
+  border: 1px solid gray !important;
+  transition: .3s;
+}
+#card_submit:hover{
+  background: orange !important;
+}
+
 #card_inputs div {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    margin-left: -20px;
+    margin-top: 10px;
     align-items: center;
 }
 /* ! Конец задания с банковской картой */
