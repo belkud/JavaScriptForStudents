@@ -8,7 +8,7 @@
     <title >For students</title>
   </head>
   <body>
-    
+
     <!-- <div> с файла JS_DZ_Modul_3_Week_11.html (JavaScript)</div> -->
      
 <!-- !!!!!!!!!!!!!!!!!! задание с телефонным номером!!!!!!!!!!!!!!!!!!!! -->
@@ -17,11 +17,9 @@
     <form id="formId" style="display: flex; flex-direction: column; gap: 10px;">
       <fieldset style="border: 2px solid red; width: 180px;">
         <legend>Telephone</legend>
-  
-        
         
         <div style="color: lightgrey;">Введите номер телефона</div>
-        <input  type="text" name="" maxlength="18" id="telephone_number" placeholder="+7 (___) ___-__-__">
+        <input  type="text" name="telephone_number" pattern="[0-9]*" maxlength="18" id="telephone_number" placeholder="+7 (___) ___-__-__">
         <button id="clean_number">
           <div id="button_line"></div>Очистить номер
         </button>
@@ -36,21 +34,21 @@
 <form id="card" method="get">
     <div id="card_info">credit card details</div>
     <div>
-        <label for="number">Card Number</label>
-        <input type="text" id="number" name="num" value="" placeholder="Введите номер карты">
+        <label for="card_number">Card Number</label>
+        <input type="text" inputmode="numeric" pattern="[0-9]*" id="card_number" name="card_number" placeholder="Введите номер карты">
     </div>
     <div>
-        <label for="">Your name</label>
-        <input type="text" placeholder="Введите имя">
+        <label for="your_name">Your name</label>
+        <input type="text" id="your_name" name="your_name" placeholder="Введите имя">
     </div>
     <div id="card_inputs" style="display: flex; align-items: flex-end; width: 72%;">
         <div>
-            <label for="">Expire date</label>
-            <input type="number"  placeholder="02">
+            <label for="expire_day_month">Expire date</label>
+            <input id="expire_day_month" name="expire_day_month" type="number"  placeholder="02">
         </div>    
         <div>
-            <label for=""></label>
-            <input type="text">
+            <label for="year"></label>
+            <input id="year" type="text">
         </div>    
         <div>
             <label for="password">CVV/CVN</label>
@@ -65,8 +63,6 @@
 </form>
 <br><br><br><hr>
 <!-- !!!!!!!!!!!!!!!!!! Конец задания с банковской картой!!!!!!!!!!!!!!!!!!!! -->
-
-
 
 
 <!-- !!!!!!!!!!!!!!!!!! задание с поездом!!!!!!!!!!!!!!!!!!!! -->
