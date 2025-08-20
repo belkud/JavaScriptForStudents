@@ -56,6 +56,46 @@ body {
   }
 /*! Конец задания с телефонным номером */
 
+
+/*! Задание с футбольным мячом */
+.field {
+  width: 320px;
+  text-align: center;
+  background-color: green;
+  border: 10px solid gray;
+}
+
+#ball {
+  position: absolute;
+  transition: .5s;
+  z-index: 20;
+}
+
+#ball_shadow {
+  position: absolute;
+  background: rgb(80, 78, 78, .8);
+  height: 40px;
+  width: 40px;
+  margin-top: -33px;
+  margin-left: 12px;
+  border-radius: 50%;
+  z-index: -1 !important;
+}
+
+#ball_image {
+  transition: .5s;
+  /* width: 50px; */
+}
+
+
+/*! Задание с футбольным мячом, завершение */
+
+
+
+
+
+
+
 /*! Список покупок */
 #inputs {
     display: flex;

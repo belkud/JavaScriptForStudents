@@ -27,7 +27,44 @@ clean_number.addEventListener('click', (e)=> {
 })
 
 
+
 // ! Конец задания с телефонным номером */
+
+
+//! Задание с футбольным мячом
+
+let field = document.querySelector('.field') as HTMLDivElement
+let ball = document.getElementById('ball') as HTMLDivElement
+let ball_image = document.getElementById('ball_image') as HTMLDivElement
+
+
+
+
+let widthOfField = getComputedStyle(field).width // ширина поля
+let heightOfField = getComputedStyle(field).height // высота поля
+let widthOfBall = getComputedStyle(ball).width// ширина мяча
+let heightOfBall = getComputedStyle(ball).height// высота мяча
+
+
+ball.style.marginLeft = ((parseInt(widthOfField) - parseInt(widthOfBall)) / 2) + 'px'
+ball.style.marginTop = ((parseInt(heightOfField) - parseInt(heightOfBall)) / 2) + 'px'
+
+let degree = 0
+
+field.addEventListener('click', (e) => {
+    degree += 90 
+    ball.style.marginLeft = e.pageX - field.offsetLeft - parseInt(widthOfBall) / 2 - 7 + 'px'
+    ball.style.marginTop = e.pageY - field.offsetTop - parseInt(heightOfBall) / 2 - 5 + 'px'
+    ball_image.style.rotate = degree + 'deg' //! 'подкручиваем' мяч
+    // console.log(e.pageY); //! отслеживаем нажатие мышкой по оси У
+    // console.log(field.offsetTop); //! расстояние от начала страницы до футбольного поля
+
+})
+
+
+//! Задание с футбольным мячом, завершение
+
+
 
 
 // ! Список покупок
