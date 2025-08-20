@@ -54,10 +54,31 @@ body {
       
     }
   }
-/* ! Конец задания с телефонным номером */
+/*! Конец задания с телефонным номером */
+
+/*! Список покупок */
+#inputs {
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+    gap: 2px;
+    position: absolute;
+    margin-left: 300px;
+}
+
+#add_product{
+    color: aliceblue;
+    background-color: red;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+ /*! Конец задания со списком покупок */
 
 
-/* !!!!!!!!!!!!!!!!!! Недельный календарь !!!!!!!!!!!!!!!!!! */
+
+
+/* ! Недельный календарь */
 #days div {
     background: rgb(188, 185, 185);
     width: 120px;

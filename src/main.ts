@@ -27,6 +27,173 @@ clean_number.addEventListener('click', (e)=> {
 })
 
 
+// ! Конец задания с телефонным номером */
+
+
+// ! Список покупок
+
+
+let list = [
+    {name: 'Milk', quantaty:2, bought:true}, 
+    {name: 'Sugar', quantaty:3, bought:false}, 
+    {name: 'Bread', quantaty:1, bought:true},
+    {name: 'Potato', quantaty:2, bought:false}, 
+    {name: 'Chocolate', quantaty:3, bought:true}, 
+]
+
+let listWithProducts = document.getElementById('listWithProducts') as HTMLDivElement
+
+
+//? 1. Вывод всего списка на экран таким образом, чтобы сначала шли некупленные 
+//? продукты, а потом – купленные.
+
+listWithProducts.innerHTML+=('Некупленные продукты:').bold()+'<br>'
+
+for (const el of list) {
+    if(el.bought==true){
+        listWithProducts.innerHTML+=(el.name + ' ' + el.quantaty)+'<br>'
+    }
+}
+listWithProducts.innerHTML+=('Купленные продукты:').bold()+'<br>'
+
+for (const el of list) {
+    if(el.bought==false){
+        listWithProducts.innerHTML+=(el.name + ' ' + el.quantaty)+'<br>'
+    }
+}
+
+
+
+//? 2. Добавление покупки в список. Учтите, что при добавлении покупки с уже 
+//? существующим в списке продуктом, необходимо увеличивать количество в 
+//? существующей покупке, а не добавлять новую. 
+
+// ????????????????????????????????????????????????????????????
+
+let product_title = document.getElementById('product_title') as HTMLInputElement
+let product_quantaty = document.getElementById('product_quantaty') as HTMLInputElement
+let add_product = document.getElementById('add_product') as HTMLButtonElement
+
+
+function writeProduct() {
+
+    add_product.addEventListener('click',()=>{
+        for (let i = 0; i < list.length; i++) {
+            if(list[i].name==product_title.value) {
+                console.log(list[i].quantaty+=1);
+                
+                return list[i].quantaty+=1
+            }
+            
+        }
+        return listWithProducts.innerHTML+=product_title.value + ' ' + product_quantaty.value + '<button id="add_product">add product</button>' + '<br>'
+    })
+    
+}
+
+writeProduct()
+ 
+            
+        
+
+//? 3. Покупка продукта. Функция принимает название продукта и отмечает его как 
+//? купленный.
+
+
+
+
+// ! Конец задания со списком покупок
+
+
+
+//! Создать массив, описывающий чек в магазине. Каждый элемент массива состоит из 
+//! названия товара, количества и цены за единицу товара. Написать следующие функции.
+
+
+let check = [
+    {name: 'Milk', quantaty:2, price:90},    //180
+    {name: 'Sugar', quantaty:3, price:100},    //300
+    {name: 'bread', quantaty:1, price:50},    //50
+    {name: 'potato', quantaty:2, price:60},    //120
+    {name: 'chocolate', quantaty:3, price:120},    //360
+    // суммарно 1010
+]
+
+
+//?  1. Распечатка чека на экран.
+
+let showCheck = document.getElementById('checkInShop') as HTMLElement
+showCheck.innerHTML = '<br>' + ('Чек с покупками:').bold() + '<br>'+ '<br>'
+
+function printCheck(check:any[]) {
+    let printInfo = ''
+    for (const el of check) {
+        printInfo += (JSON.stringify(el))+'<br>'
+    }
+    return showCheck.innerHTML+=printInfo
+}
+printCheck(check);
+
+
+
+//?  2. Подсчет общей суммы покупки.
+
+function unionSumm(check:any[]) {
+  let count = 0
+    for (const el of check) {
+        count+=el.quantaty*el.price
+    }
+    return showCheck.innerHTML +=`<br> Общая сумма покупки = ${count} <br><br>`
+}
+unionSumm(check)
+
+
+
+//?  3. Получение самой дорогой покупки в чеке.
+
+function mostExpensiveBought(check:any[]) {
+    let massive:number[] = []
+    for (const el of check) {
+        massive.push(el.price*el.quantaty)
+    }
+    return showCheck.innerHTML+=`Самая дорогая покупка = ${Math.max(...massive)} <br><br>`    
+}
+mostExpensiveBought(check)
+
+
+
+//?  4. Подсчет средней стоимости одного товара в чеке. 
+
+function findMiddlePrice(check:any[]) {
+    let middlePrice = 0
+    for (let i = 0; i < check.length; i++) {
+        middlePrice+=(check[i].price)/check.length    
+        console.log(middlePrice);
+    }
+    return showCheck.innerHTML+=`Средняя стоимость одного товара = ${middlePrice}<br><br><br><br>`
+}
+findMiddlePrice(check)
+
+//! Конец задания с чеком
+
+
+
+
+// !!!    Задания с датами
+// ! Недельный календарь !
+let todays = new Date()
+
+let days = document.querySelector('#days') as any
+if (todays.getDay() == 0) {
+    days.children[todays.getDay() + 7].classList.add('newClass')
+}
+
+days.children[todays.getDay()].classList.add('newClass')
+
+// !!!    Конец задания с датой
+
+
+
 // ! Задание с банковской картой */
 
 let card_inputs = document.querySelectorAll('#card_inputs input') as any
@@ -55,11 +222,11 @@ card_inputs[0].addEventListener('keydown',(e:any)=> {
 })
     
 
-    
-    
-
-
 // ! Конец задания с банковской картой */
+    
+    
+
+
 
 
 // //!!!!!!!!!!!!!!!!!! задание с поездом!!!!!!!!!!!!!!!!!!!!
@@ -415,11 +582,3 @@ fetch('http://localhost:5173/JavaScriptForStudents/')
 //     changeColorOfLetters.innerHTML +=array
 
 // }
-let todays = new Date()
-
-let days = document.querySelector('#days') as any
-if (todays.getDay() == 0) {
-    days.children[todays.getDay() + 7].classList.add('newClass')
-}
-
-days.children[todays.getDay()].classList.add('newClass')
