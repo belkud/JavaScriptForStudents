@@ -57,6 +57,32 @@ body {
 /* ! Конец задания с телефонным номером */
 
 
+/* !!!!!!!!!!!!!!!!!! Недельный календарь !!!!!!!!!!!!!!!!!! */
+#days div {
+    background: rgb(188, 185, 185);
+    width: 120px;
+    text-align: center;
+    padding: 2px;
+    transition: .3s;
+    border: 1px solid #000;
+}    
+
+#days div:hover {
+    background-color: pink !important;
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.newClass {
+    background: red !important;
+    color: white;
+    padding: 5px !important;
+    margin-left: -3px !important;
+}
+
+
+
+
 
 /*! Задание с банковской картой */
 #card {
@@ -254,6 +280,8 @@ input:focus, select:focus {
     border: 1px solid #000;
     background-color: lightskyblue;
   }
+
+
   #JSON_container>div:nth-child(1)>input {
     background: palegreen;
   }

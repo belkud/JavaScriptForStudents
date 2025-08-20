@@ -283,7 +283,7 @@ button_format_text.addEventListener('click',()=> {
     //     }
         
     // }
-
+    formated_text.style.overflowY = 'scroll'
 
     formated_text.innerHTML= user_text.value
     .replace('[', '<span class="margin2">[</span><br>')
@@ -375,3 +375,51 @@ fetch('http://localhost:5173/JavaScriptForStudents/')
 
 
 
+//   //! Рассчитайте, сколько дней осталось до Нового года. 
+//   let d0 = new Date();
+//   let d1 = new Date('Jan 1 2026');
+//   let dt = (d1.getTime() - d0.getTime()) / 
+//   (1000*60*60*24);
+
+//   listWithProducts.innerHTML+=('До нового года осталось: ' + 
+//   Math.round(dt) + ' дней'); 
+  
+  
+
+  
+
+  
+
+
+
+
+// //! Задача с днём рождения :))))
+// let birthday = new Date('7-26-2017')
+// let birthMass = ['воскр','понед','вторн','среда','четв','пятн','субб',]
+// console.log(birthMass[birthday.getDay()]);
+
+
+
+
+
+// //! Плавное_изменение_цвета_букв
+// let changeColorOfLetters = document.getElementById('changeColorOfLetters') as HTMLDivElement
+// let text = 'плавное_изменение_цвета_букв'
+// let textMass = text.split('') as any
+
+// let count = 0
+// for (let i = 0; i < textMass.length; i++) {
+//     count+=0.05   
+//     let array = []
+//     array.push(`<div style="color:  rgb(237, 12, 12, ${count});"> ${textMass[i]} <\div>`) 
+//     changeColorOfLetters.innerHTML +=array
+
+// }
+let todays = new Date()
+
+let days = document.querySelector('#days') as any
+if (todays.getDay() == 0) {
+    days.children[todays.getDay() + 7].classList.add('newClass')
+}
+
+days.children[todays.getDay()].classList.add('newClass')
