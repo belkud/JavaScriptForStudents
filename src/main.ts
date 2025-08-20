@@ -26,19 +26,66 @@ clean_number.addEventListener('click', (e)=> {
     telephone_number.value=''
 })
 
-
-
 // ! Конец задания с телефонным номером */
+
+
+
+//! Работа с таблицей работников
+
+let table_with_workers = document.querySelector('#table_with_workers') as any
+let add_worker = document.querySelector('#add_worker') as HTMLButtonElement // кнопка добавления работника
+let delete_inputs = document.querySelector('#clean_inputs') as HTMLButtonElement // кнопка добавления работника
+let delete_worker = document.querySelector('#delete_worker') as HTMLButtonElement // кнопка удаления работника
+let new_worker_form = document.querySelector('#new_worker_form') as any // окошки, с вводимой информацией
+let number_delete_worker = document.querySelector('#number_delete_worker') as HTMLInputElement // окошки, с вводимой информацией
+
+let accWorker = table_with_workers.rows.length - 1 // количество работников
+let accWorkerInHTML = document.querySelector('#accWorkerInHTML') as HTMLDivElement // вывод количества работников
+accWorkerInHTML.innerHTML = `Количество работников: ${accWorker}`
+
+let child = new_worker_form.children
+add_worker.addEventListener('click', () => {
+    if (child[0].value == '') {
+        child[0].style.border = '2px solid red'
+        child[0].style.background = 'pink'
+    } else {
+        accWorker += 1
+        table_with_workers.innerHTML += `<tr>
+    <td>${child[0].value}</td>
+    <td>${child[1].value}</td>
+    <td>${child[2].value}</td>
+    <td>${child[3].value}</td>
+    </tr>`
+        accWorkerInHTML.innerHTML = `Количество работников: ${accWorker}`
+        child[0].style.border = ''
+        child[0].style.background = ''
+    }
+})
+
+delete_worker.addEventListener('click', () => {
+    if (number_delete_worker.value >= '1') {
+        table_with_workers.deleteRow(number_delete_worker.value)
+        accWorker -= 1
+        accWorkerInHTML.innerHTML = `Количество работников: ${accWorker}`
+    }
+})
+
+delete_inputs.addEventListener('click', () => { // очищаем инпуты
+    child[0].value = ''
+    child[1].value = ''
+    child[2].value = ''
+    child[3].value = ''
+})
+
+//! Работа с таблицей работников, завершение
+
 
 
 //! Задание с футбольным мячом
 
 let field = document.querySelector('.field') as HTMLDivElement
 let ball = document.getElementById('ball') as HTMLDivElement
-let ball_image = document.getElementById('ball_image') as HTMLDivElement
-
-
-
+let ball_image = document.getElementById('ball_image') as HTMLImageElement
 
 let widthOfField = getComputedStyle(field).width // ширина поля
 let heightOfField = getComputedStyle(field).height // высота поля

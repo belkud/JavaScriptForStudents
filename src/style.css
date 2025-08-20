@@ -3,7 +3,7 @@ body {
 }
 
 .title {
-  margin-top: 90px;
+  margin-top: 60px;
   margin-bottom: 50px;
   /* color: rgb(101, 101, 101); */
 }
@@ -55,6 +55,59 @@ body {
     }
   }
 /*! Конец задания с телефонным номером */
+
+
+/*! Работа с таблицей работников */
+
+#table_with_workers {
+  background-color: gray;
+  margin: 50px;
+  margin-left: 20px;
+  text-align: center;
+  border-collapse: collapse;
+  cursor: pointer;
+  /* border: 2px solid red; */
+}
+
+#table_with_workers td,
+#table_with_workers th {
+  border: 1px solid black;
+  padding: 10px 5px;
+  width: 100px;
+}
+
+#table_with_workers tr:hover {
+  transition: .1s;
+  background: pink;
+  color: black;
+}
+
+#table_with_workers th:hover, #table_with_workers td:hover {
+  transition: .3s;
+  background: red;
+  color: white;
+  font-weight: bold;
+}
+
+#new_worker_form input {
+  width: 120px;
+  height: 20px;
+  border-radius: 5px;
+}
+
+#number_delete_worker {
+  width: 41px; 
+  text-align: center;
+}
+
+#accWorkerInHTML {
+  margin-top: -30px;
+  margin-bottom: 30px;
+
+}
+
+/*! Работа с таблицей работников, завершение */
+
 
 
 /*! Задание с футбольным мячом */
