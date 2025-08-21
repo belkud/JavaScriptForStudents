@@ -1,5 +1,6 @@
 body {
   background: lightgray;
+  /* background: rgb(107, 106, 106); */
 }
 
 .title {
@@ -73,7 +74,7 @@ body {
 #table_with_workers th {
   border: 1px solid black;
   padding: 10px 5px;
-  width: 100px;
+  min-width: 120px;
 }
 
 #table_with_workers tr:hover {
@@ -93,6 +94,19 @@ body {
   width: 120px;
   height: 20px;
   border-radius: 5px;
+}
+
+#table_buttons button {
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: .3s;
+  color: red;
+  font-weight: bold;
+  background-color: lightgray;
+}
+
+#table_buttons button:hover {
+  background: rgb(175, 174, 174);
 }
 
 #number_delete_worker {
