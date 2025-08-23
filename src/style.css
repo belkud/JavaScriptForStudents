@@ -112,6 +112,8 @@ body {
 #number_delete_worker {
   width: 41px; 
   text-align: center;
+  border-radius: 5px;
+  height: 22px;
 }
 
 #accWorkerInHTML {
@@ -130,6 +132,7 @@ body {
   text-align: center;
   background-color: green;
   border: 10px solid gray;
+  cursor: default;
 }
 
 #ball {
@@ -499,7 +502,32 @@ input:focus, select:focus {
 
 
 
+@media screen and (max-width: 1000px) {
+  .title {
+    font-size: .8em;
+  }
 
+  #table_buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;  
+    width: 220px;
+  }
+
+  #number_delete_worker {
+    position: absolute;
+    margin-left: 230px;
+    margin-top: 80px;
+  }
+
+  #new_worker_form {
+      display: grid;
+      gap: 5px;
+      width: 300px;
+      /* border: 1px solid red; */
+      grid-template-columns: 1fr 1fr;
+  }
+}
 
 
 
