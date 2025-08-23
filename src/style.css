@@ -1,5 +1,6 @@
 body {
   background: lightgray;
+  user-select: none;
   /* background: rgb(107, 106, 106); */
 }
 
@@ -527,6 +528,22 @@ input:focus, select:focus {
       /* border: 1px solid red; */
       grid-template-columns: 1fr 1fr;
   }
+
+  #clean_number {
+    margin-left: 30px ;
+  }
+
+  
+#table_with_workers td,
+#table_with_workers th {
+  min-width: 90px;
+}
+
+#table_with_workers { 
+  margin-left: 0px;
+}
+
+
 }
 
 
