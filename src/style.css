@@ -529,20 +529,24 @@ input:focus, select:focus {
       grid-template-columns: 1fr 1fr;
   }
 
+  #new_worker_form input { 
+    width: 150px;
+  }
+
   #clean_number {
-    margin-left: 30px ;
+    margin-left: 20px;
+    width: 168px;
   }
 
   
 #table_with_workers td,
 #table_with_workers th {
-  min-width: 90px;
+  min-width: 80px;
 }
 
 #table_with_workers { 
   margin-left: 0px;
 }
-
 
 }
 
