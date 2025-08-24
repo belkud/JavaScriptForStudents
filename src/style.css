@@ -541,7 +541,8 @@ input:focus, select:focus {
   
 #table_with_workers td,
 #table_with_workers th {
-  min-width: 80px;
+  min-width: 78px;
+    padding: 10px 3px;
 }
 
 #table_with_workers { 
