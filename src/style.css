@@ -4,6 +4,10 @@ body {
   /* background: rgb(107, 106, 106); */
 }
 
+*:active, *:focus {
+    outline: none !important;
+    /* background-color: transparent !important; */
+}
 .title {
   margin-top: 60px;
   margin-bottom: 50px;
@@ -541,8 +545,9 @@ input:focus, select:focus {
   
 #table_with_workers td,
 #table_with_workers th {
-  min-width: 78px;
-    padding: 10px 3px;
+  font-size: 0.8em;
+  min-width: 82px;
+  padding: 10px 3px;
 }
 
 #table_with_workers { 
