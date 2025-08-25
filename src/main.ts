@@ -594,31 +594,6 @@ button_format_text.addEventListener('click',()=> {
 
 
 
- 
-fetch('http://localhost:5173/JavaScriptForStudents/')
-
-//! в первой строке всегда получает статус
-// .then((resp)=> resp.text())
-// .then((data)=> console.log(data))
-
-
-
-
-.then((resp)=> resp.blob())
-.then((data)=>console.log(data))
-.catch((error)=>console.log(error + 'Где-то ошибка'))
-.finally(()=>console.log('finish'))
-
-
-
-// if (resp.ok) {
-//     console.log('успешно');
-// } else {
-//     console.log('Ошибка');
-// }
-
-
-
 
 
 
@@ -666,3 +641,156 @@ fetch('http://localhost:5173/JavaScriptForStudents/')
 //     changeColorOfLetters.innerHTML +=array
 
 // }
+
+
+
+
+
+ 
+ 
+fetch('http://localhost:5173/JavaScriptForStudents/')
+
+//! в первой строке всегда получаем статус
+// .then((resp)=> resp.text())
+// .then((data)=> console.log(data))
+
+
+
+
+// .then((resp)=> resp.blob())
+// .then((data)=>console.log(data))
+// .catch((error)=>console.log(error + 'Где-то ошибка'))
+// .finally(()=>console.log('finish'))
+
+
+
+// if (resp.ok) {
+//     console.log('успешно');
+// } else {
+//     console.log('Ошибка');
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// .then((resp)=>resp.blob())
+// .then((data)=>console.log(data))
+
+//! узнать кол-во репозиториев
+
+let profiles = await fetch('https://api.github.com/users/belkud')
+let myProfile = await profiles.json()
+console.log(myProfile.public_repos + '- количество публичных репозиториев');
+
+
+//! получить изображение с гитхаб
+console.log(myProfile.avatar_url);
+
+let myImage = document.createElement('img')
+myImage.src = myProfile.avatar_url
+document.body.prepend(myImage)
+console.log(getComputedStyle(myImage).width);
+console.log(getComputedStyle(myImage).height);
+
+
+setTimeout(() => {
+    myImage.style.display ='none'
+}, 2000);
+
+
+
+console.log(profiles.headers.get('Content-type'));
+
+
+
+
+
+
+
+// let mySite = await fetch('http://localhost:5173/JavaScriptForStudents/')
+
+// let siteInfo = await mySite.blob() //! показывает размер сайта и тип данных
+// console.log(`размер сайта: ${siteInfo.size} килобайт,
+//     тип данных: ${siteInfo.type}`)
+    
+// let siteInfo2 = await mySite.text() //! переводит в обычный текст
+// console.log(siteInfo2);
+
+// let siteInfo3 = await mySite.json() //! переводит в json формат
+// console.log(siteInfo3);
+
+// let siteInfo4 = await mySite.arrayBuffer() //! низкоуровненое представление данных
+// console.log(siteInfo4);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// вывести Kudarenko Vladimir с гит двумя способами (через два then или два await)
+
+
+//! первый способ обработки запроса
+let myGithub1 = await fetch('https://api.github.com/users/belkud')
+let myName1 = await myGithub1.json()
+console.log(myName1.name);
+
+//! второй способ обработки запроса
+fetch('https://api.github.com/users/belkud')
+.then((data)=> data.json())
+.then((user)=> console.log(user.name))
+
+// console.log(user.name);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

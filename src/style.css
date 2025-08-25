@@ -82,6 +82,11 @@ body {
   min-width: 120px;
 }
 
+#table_with_workers td:last-child {
+  /* background: greenyellow; */
+  min-width: 130px;
+}
+
 #table_with_workers tr:hover {
   transition: .1s;
   background: pink;
