@@ -1,5 +1,82 @@
 import './style.css'
 
+
+
+//! Сделать пагинацию
+
+//! размяться 
+
+//! Задание 1 // JS_PZ_Modul_2_Week_4 
+//! Реализовать класс PrintMaсhine, которой состоит из:
+//! ■ размера шрифта;
+//! ■ цвета шрифта;
+//! ■ семейства шрифта;
+//! ■ метода print(), который принимает текст и печатает его 
+//! соответствующим шрифтом 
+
+
+//! Задание 1
+//! Реализовать класс, описывающий простой маркер.  В классе 
+//! должны быть следующие компоненты:
+//! ■ поле, которое хранит цвет маркера;
+//! ■ поле, которое хранит количество чернил в маркере (в про
+//! центах);
+//! ■ метод для печати (метод принимает строку и выводит 
+//! текст соответствующим цветом; текст выводится до тех 
+//! пор, пока в маркере есть чернила; один не пробельный 
+//! символ – это 0,5% чернил в маркере).
+
+
+let symbols = document.getElementById('marker_symbol') as HTMLDivElement
+let marker_info = document.getElementById('marker_info') as HTMLDivElement
+
+class Marker {
+    color
+    ink
+    constructor(color:string, ink:number){
+        this.color = color
+        this.ink = ink //количество чернил (на 50 символов)
+    }
+
+    print (text:string) {
+        let num = this.ink
+
+        for (let i = 0; i < num; i++) {
+            if (text[i]=='_') {
+                symbols.innerHTML+=`<span style="color: ${this.color}; 
+                opacity: ${1+i/num};">${text[i]}</span>`
+            } else {
+                symbols.innerHTML+=`<span style="color: ${this.color}; 
+                opacity: ${1-i/num};">${text[i]}</span>`
+            }
+        }
+        console.log(num);
+
+        symbols.innerHTML+='<br>'
+
+        marker_info.innerHTML += `
+        Цвет маркера:${this.color} <br>
+        Количество введенных символов: ${this.ink}<br>
+        Символов не напечаталось: ${text.length - this.ink} <br>
+        
+        <br>
+        `
+}
+}
+
+let marker1 = new Marker('red', 15)
+marker1.print('1_2_3_4_5_6_9_8_8901234567890')
+
+
+let marker2 = new Marker('orange', 25)
+marker2.print('123456789')
+
+
+
+
+
+
+
 //! Задание с телефонным номером
 let telephone_number = document.querySelector('#telephone_number') as HTMLInputElement
 let clean_number = document.querySelector('#clean_number') as HTMLInputElement
