@@ -266,14 +266,15 @@ body {
     text-align: center;
 }
 
-#card_submit{
+#card_submit, #print_text {
   margin-top: 30px;
   height: 25px !important;
   border-radius: 5px;
   border: 1px solid gray !important;
   transition: .3s;
 }
-#card_submit:hover{
+
+#card_submit:hover, #print_text:hover{
   background: orange !important;
 }
 

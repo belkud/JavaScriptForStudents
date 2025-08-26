@@ -30,11 +30,85 @@
 
 <!-- !!!!!!!!!!!!!!!!!! Конец задания с телефонным номером!!!!!!!!!!!!!!!!!!!! -->
 
+
+<!-- !!!!!!!!!!!!!!!!!! Задание с вводом стилизованного текста!!!!!!!!!!!!!!!!!!!! -->
+
 <h2 class="title">Создать html-страницу с формой для ввода стилизованного 
-текста. После заполнения формы, вывести текст на экран в соот
-ветствии с указанными стилями.</h2>
+  текста. После заполнения формы, вывести текст на экран в соот
+  ветствии с указанными стилями.</h2>
+  
+  <div style="color: rgb(116, 116, 116); margin-bottom: 20px;">(можно напечать свой текст)</div>
+  <form action="">
+
+  <textarea id="textArea">Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque neque sequi nemo, temporibus atque, excepturi
+    iusto ea libero provident, animi illum quia corrupti. Aliquam quibusdam dolores voluptate. 
+  </textarea>
+
+  <div style="color: rgb(116, 116, 116);">(выберите стили текста)</div>
+  <div id="formMenu">
+    <input type="checkbox">
+    <label for="">Bold</label>
+    
+    <input type="checkbox">
+    <label for="">Underline</label>
+
+    <input type="checkbox">
+    <label for="">Italic</label>
+  </div>
+
+  <input id="print_text" type="submit" value="Показать текст">
+
+
+
+</form>
+
+<div id="text_from_form"></div> <!-- Вывод текста с textarea -->
+
+<style>
+#textArea, #text_from_form  {
+  height: 120px;
+  width: 300px; 
+  border-radius: 5px;
+  padding: 5px;
+  margin-top: -20px;
+}
+
+#text_from_form {
+  background: rgb(175, 165, 165); 
+  margin-top: 25px;
+  /* color: transparent; */
+  /* transition: 3s !important; */
+}
+
+#print_text {
+  width: 310px;
+  background-image: url(public/arrow.png);
+  background-size: 18px;
+  background-repeat: no-repeat;
+  background-position: 205px 3px;
+}
+
+.bold {
+  font-weight: 900;
+
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.italic {
+   font-style: italic;
+}
+
+</style>
+
+
 
 <br><br><hr>
+<!-- !!!!!!!!!!!!!!!!!! задание с вводом стилизованного текста, завершение !!!!!!!!!!!!!!!!!!!! -->
+
+
 
 
 <!--!!!!!!!!!!!!!!!!!! Работа с таблицей работников !!!!!!!!!!!!!!!!!!-->

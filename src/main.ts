@@ -30,6 +30,34 @@ clean_number.addEventListener('click', (e)=> {
 
 
 
+//! Задание с вводом стилизованного текста
+
+let text_from_form = document.querySelector('#text_from_form') as HTMLDivElement
+
+let formMenu = document.querySelectorAll('#formMenu input') as any
+let textArea = document.querySelector('#textArea') as HTMLTextAreaElement
+let print_text = document.querySelector('#print_text') as HTMLButtonElement
+
+print_text.addEventListener('click',(e)=> {
+    e.preventDefault()
+    text_from_form.innerHTML=`<div class="hide_text">${textArea.value}<div>`
+    let mass = ['bold', 'underline', 'italic'] 
+
+    for (let i = 0; i < mass.length; i+=1) {
+        
+        if (formMenu[i].checked == true) {
+            text_from_form.classList.add(mass[i])        
+        } else {
+            text_from_form.classList.remove(mass[i])  
+        } 
+    }
+    
+})
+
+//! Задание с вводом стилизованного текста, завершение
+
+
+
 //! Работа с таблицей работников
 
 let table_with_workers = document.querySelector('#table_with_workers') as any
