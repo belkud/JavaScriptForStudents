@@ -691,30 +691,30 @@ fetch('http://localhost:5173/JavaScriptForStudents/')
 // .then((resp)=>resp.blob())
 // .then((data)=>console.log(data))
 
-//! узнать кол-во репозиториев
+// //! узнать кол-во репозиториев
 
-let profiles = await fetch('https://api.github.com/users/belkud')
-let myProfile = await profiles.json()
-console.log(myProfile.public_repos + '- количество публичных репозиториев');
-
-
-//! получить изображение с гитхаб
-console.log(myProfile.avatar_url);
-
-let myImage = document.createElement('img')
-myImage.src = myProfile.avatar_url
-document.body.prepend(myImage)
-console.log(getComputedStyle(myImage).width);
-console.log(getComputedStyle(myImage).height);
+// let profiles = await fetch('https://api.github.com/users/belkud')
+// let myProfile = await profiles.json()
+// console.log(myProfile.public_repos + '- количество публичных репозиториев');
 
 
-setTimeout(() => {
-    myImage.style.display ='none'
-}, 2000);
+// //! получить изображение с гитхаб
+// console.log(myProfile.avatar_url);
+
+// let myImage = document.createElement('img')
+// myImage.src = myProfile.avatar_url
+// document.body.prepend(myImage)
+// console.log(getComputedStyle(myImage).width);
+// console.log(getComputedStyle(myImage).height);
+
+
+// setTimeout(() => {
+//     myImage.style.display ='none'
+// }, 2000);
 
 
 
-console.log(profiles.headers.get('Content-type'));
+// console.log(profiles.headers.get('Content-type'));
 
 
 
@@ -755,15 +755,15 @@ console.log(profiles.headers.get('Content-type'));
 // вывести Kudarenko Vladimir с гит двумя способами (через два then или два await)
 
 
-//! первый способ обработки запроса
-let myGithub1 = await fetch('https://api.github.com/users/belkud')
-let myName1 = await myGithub1.json()
-console.log(myName1.name);
+// //! первый способ обработки запроса
+// let myGithub1 = await fetch('https://api.github.com/users/belkud')
+// let myName1 = await myGithub1.json()
+// console.log(myName1.name);
 
-//! второй способ обработки запроса
-fetch('https://api.github.com/users/belkud')
-.then((data)=> data.json())
-.then((user)=> console.log(user.name))
+// //! второй способ обработки запроса
+// fetch('https://api.github.com/users/belkud')
+// .then((data)=> data.json())
+// .then((user)=> console.log(user.name))
 
 // console.log(user.name);
 
