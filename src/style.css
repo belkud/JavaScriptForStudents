@@ -196,6 +196,7 @@ body {
 
 
 
+/* Задания с датами */
 
 /* ! Недельный календарь */
 #days div {
@@ -220,7 +221,31 @@ body {
     margin-left: -3px !important;
 }
 
+/*! Бегущая строка с текущей датой */
+#runningLine{
+  padding: 3px;
+  font-size: 1.2em;
+  margin: 5px -10px;
+  animation: moveLine 15s linear infinite;
+  margin-left: -650px;
+}
 
+@keyframes moveLine {
+  0% {
+    margin-left: 250px;
+  }
+}
+
+#advertismentBox {
+  background-color: rgb(142, 179, 209);
+  width: 250px;
+  margin-top: 10px;
+  overflow: hidden;
+  white-space: nowrap;
+  font-family: sans-serif;
+  border:  1px solid black;
+  border-radius: 5px;
+}
 
 
 

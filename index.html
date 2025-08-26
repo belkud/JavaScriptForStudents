@@ -41,7 +41,7 @@
   <form action="">
 
   <textarea id="textArea">Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque neque sequi nemo, temporibus atque, excepturi
-    iusto ea libero provident, animi illum quia corrupti. Aliquam quibusdam dolores voluptate. 
+    iusto ea libero provident, animi illum quia corrupti. Aliquam quibusdam. 
   </textarea>
 
   <div style="color: rgb(116, 116, 116);">(выберите стили текста)</div>
@@ -60,11 +60,13 @@
   </div>
 
   <input id="print_text" type="submit" value="Показать текст">
-
-
-
+  
+  
+  
 </form>
 
+<br>
+<div  style="margin-bottom: -20px;">Результат:</div>
 <div id="text_from_form"></div> <!-- Вывод текста с textarea -->
 
 <style>
@@ -79,6 +81,7 @@
 #text_from_form {
   background: rgb(175, 165, 165); 
   margin-top: 25px;
+  border: 1px solid black;
   /* color: transparent; */
   /* transition: 3s !important; */
 }
@@ -280,6 +283,12 @@
     <div>Суббота</div>
     <div>Воскресенье</div>
 </div>
+
+<!-- !!!!!!!!!!!!!!!!!!Бегущая строка с текущей датой!!!!!!!!!!!!!!!!!!-->
+<div id="advertismentBox">
+    <div id="runningLine"></div>
+</div>
+
 <br><br><hr>
 
 

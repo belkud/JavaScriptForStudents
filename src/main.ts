@@ -309,7 +309,14 @@ if (todays.getDay() == 0) {
 
 days.children[todays.getDay()].classList.add('newClass')
 
-// !!!    Конец задания с датой
+
+let runningLine = document.querySelector('#runningLine') as HTMLDivElement
+
+// let day = new Date()
+runningLine.innerText = todays as any
+
+
+// !!!    Конец заданий с датами
 
 
 
