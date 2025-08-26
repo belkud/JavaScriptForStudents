@@ -32,6 +32,11 @@ clean_number.addEventListener('click', (e)=> {
 
 //! Задание с вводом стилизованного текста
 
+let change_color = document.querySelector('#change_color') as HTMLInputElement
+change_color.addEventListener('input', ()=> {
+    console.log(change_color.value);
+})
+
 let text_from_form = document.querySelector('#text_from_form') as HTMLDivElement
 
 let formMenu = document.querySelectorAll('#formMenu input') as any
@@ -40,7 +45,7 @@ let print_text = document.querySelector('#print_text') as HTMLButtonElement
 
 print_text.addEventListener('click',(e)=> {
     e.preventDefault()
-    text_from_form.innerHTML=`<div class="hide_text">${textArea.value}<div>`
+    text_from_form.innerHTML=`<div style="color:${change_color.value};">${textArea.value}<div>`
     let mass = ['bold', 'underline', 'italic'] 
 
     for (let i = 0; i < mass.length; i+=1) {
@@ -53,6 +58,8 @@ print_text.addEventListener('click',(e)=> {
     }
     
 })
+
+
 
 //! Задание с вводом стилизованного текста, завершение
 

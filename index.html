@@ -47,13 +47,16 @@
   <div style="color: rgb(116, 116, 116);">(выберите стили текста)</div>
   <div id="formMenu">
     <input type="checkbox">
-    <label for="">Bold</label>
+    <label class="label" for="">Bold</label>
     
     <input type="checkbox">
-    <label for="">Underline</label>
+    <label class="label" for="">Underline</label>
 
     <input type="checkbox">
-    <label for="">Italic</label>
+    <label class="label" for="">Italic</label>
+
+    <input id="change_color" type="color">
+    <label for="">text color</label>
   </div>
 
   <input id="print_text" type="submit" value="Показать текст">
@@ -88,9 +91,12 @@
   background-position: 205px 3px;
 }
 
+.label {
+  margin-left: -5px;
+}
+
 .bold {
   font-weight: 900;
-
 }
 
 .underline {
@@ -99,6 +105,12 @@
 
 .italic {
    font-style: italic;
+}
+
+#change_color {
+  margin-left: 5px;
+  width: 30px;
+  padding: 0px !important;
 }
 
 </style>
