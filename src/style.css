@@ -257,7 +257,7 @@ body {
     margin-top: 50px;
     border-radius: 10px;
     background-color: rgb(172, 204, 215);
-    background-image: url(/public/moon_flag.png);
+    background-image: url(/moon_flag.png);
     background-size: 150px;
     background-repeat: no-repeat;
     background-position: 285px 96px;

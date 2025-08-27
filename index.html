@@ -13,7 +13,125 @@
      
 
 
-      <div id="marker_symbol"></div>
+<h2 class="title">
+  Реализовать класс, описывающий маркер.  В классе должны быть следующие компоненты:
+■ поле, которое хранит цвет маркера; <br>
+■ поле, которое хранит количество чернил в маркере (в процентах); <br>
+■ поле, с количеством напечатанных символов <br>
+■ по-возможности сделать батарейку с оставшимся 'зарядом' маркера и выводить его в процентах<br>
+■ реализовать плавное изменение цвета букв (!) до тех  пор, пока в маркере есть чернила; <br>   </h2>
+
+<img id="pencil" src="public/pencil.png" alt="">
+<div id="marker_container">
+  <div style="display: flex;">
+    <div>
+      <label for="">Поле для печати</label>
+      <textarea id="text_marker"></textarea>
+    </div>
+    <div style="display: flex; flex-direction: column;">
+      <label for="">Выберите цвет</label>
+      <input value="#028302" type="color">
+    </div>
+  </div>
+  
+  <div>Символов напечатано:</div>
+  <div>Маркера осталось:</div>
+  <div id="battery">
+    <div id="inner_battery"></div>
+</div>
+
+</div>
+	
+
+
+<style>
+  #marker_container{
+      background-color: rgb(175, 173, 173);
+      width: 300px;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #000;
+
+  }
+  #text_marker {
+    width: 200px;
+    height: 50px;
+  }
+
+  #pencil {
+    width: 50px;
+    transition: .1s;
+    position: absolute;
+    margin-left: -281px;
+  }
+
+#battery {
+  border: 2px solid white;
+  width: 100px;
+  height: 30px;
+  margin-top: 10px;
+  position: relative;
+}
+
+#battery::after {
+    content: '';
+    position: absolute;
+    border: 2px solid white;
+    border-left-color:rgb(175, 173, 173);
+    border-radius: 0px 5px 5px 0px;
+    margin-left: 100px;
+    margin-top: -21.5px;
+    height: 10px;
+    width: 8px;
+}
+
+#inner_battery {
+    background-color: #028302;
+    height: 30px;
+    width: 0px;
+    max-width: 100px;
+    transition: 3s;
+    animation: changeBatetry 5s forwards;
+}
+
+@keyframes changeBatetry {
+    to {
+        width: 100px;
+    }
+}
+
+</style>
+
+
+
+
+
+
+
+
+<div id="write_marker"></div>
+
+ 
+
+
+<br><br><br><br><br>
+<div>_________________________________________________________</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="marker_symbol"></div>
   <div id="marker_info"> </div>
   <style>
     #marker_symbol {
@@ -27,6 +145,97 @@
       /* font-family:; */
     }
   </style>
+
+    
+
+    <style>
+        
+    </style>
+
+
+<!-- _____________________________________________________________________ -->
+
+
+
+
+
+
+
+ <div id="smile_container">
+    <div id="inner_box_smile" style="transition: .5s;">
+      <img src="public/smile1.png" alt="">
+      <img src="public/smile2.png" alt="">
+      <img src="public/smile3.png" alt="">
+    </div>
+  </div>
+
+
+    <button id="back">назад</button>
+  <button tabindex="3" id="forward">вперёд</button>
+  <style>
+    #smile_container {
+      border: 1px solid wheat;
+      height: 133px;
+      width: 133px;
+      overflow: hidden;
+    }
+  </style>
+
+  <script>
+    let smile_container = document.getElementById('smile_container')
+    let inner_box_smile = document.getElementById('inner_box_smile')
+    let back = document.getElementById('back')
+    let forward = document.getElementById('forward')
+    let accSmile = 0
+
+    forward.addEventListener('click', () => {
+      accSmile -= 133
+      inner_box_smile.style.marginTop = `${accSmile}px`
+      console.log(accSmile);
+    })
+
+    back.addEventListener('click', (e) => {
+      accSmile += 133
+      inner_box_smile.style.marginTop = `${accSmile}px`
+      console.log(accSmile);
+      console.log(e.target);
+      console.log(e.currentTarget);
+    })
+    smile_container.addEventListener('click', (e) => {
+      console.log(e.target);
+      console.log(e.currentTarget);
+
+    })
+
+    document.body.addEventListener('click', (e) => {
+      // console.log(e.target);
+      // console.log(e.currentTarget);
+      // console.log(e.eventPhase);
+
+    }, { capture: 'true' })
+
+let style = document.createElement('style')
+
+setTimeout (()=> {
+
+    style.innerHTML = ` #smile_container {
+        background-color: greenyellow;
+        transition:.2s;
+        }`
+        smile_container.append(style)
+    },1000)
+
+
+
+  </script>
+
+
+<br><br><hr>
+
+
+
+
+
 
 <!-- !!!!!!!!!!!!!!!!!! задание с телефонным номером!!!!!!!!!!!!!!!!!!!! -->
 
@@ -105,7 +314,7 @@
 
 #print_text {
   width: 310px;
-  background-image: url(public/arrow.png);
+  background-image: url(/arrow.png);
   background-size: 18px;
   background-repeat: no-repeat;
   background-position: 205px 3px;
@@ -209,7 +418,7 @@
   мяча останавливался именно там, где был совершен клик мышкой.</h2>
 <div class="field">
   <div id="ball">
-      <img id="ball_image" src="/public/ball.svg" alt="">
+      <img id="ball_image" src="/ball.svg" alt="">
       <div id="ball_shadow"></div>
   </div>
   ............................................................................
@@ -310,14 +519,7 @@
 
 <br><br><hr>
 
-
-
-
-
-
-
-
-
+ 
 
 
 <!-- !!!!!!!!!!!!!!!!!! задание с банковской картой!!!!!!!!!!!!!!!!!!!! -->
@@ -394,7 +596,7 @@ input[type=number] {
         <label for="">Date</label>
         <input type="date" name="data"  id="data">
       </div>
-<img id="logo_rzd" src="public/logo_rzd.png" alt="">
+<img id="logo_rzd" src="logo_rzd.png" alt="">
 
   </div>
 
@@ -410,7 +612,7 @@ input[type=number] {
     <div></div>
 </div>
 
-<img id="train_img" src="public/train_no_bg.png" alt="" srcset="">
+<img id="train_img" src="/train_no_bg.png" alt="" srcset="">
 
 <div style="display: flex; align-items: flex-end">
   <div id="total">Стоимость билета: </div>
@@ -499,26 +701,7 @@ input[type=number] {
 
 <!-- Реализовать веб-страницу «Каталог копирайтеров», завершение -->
 
-
-
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
-
-
-
+ 
 
 
 

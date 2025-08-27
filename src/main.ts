@@ -2,17 +2,51 @@ import './style.css'
 
 
 
-//! Сделать пагинацию
 
-//! размяться 
 
-//! Задание 1 // JS_PZ_Modul_2_Week_4 
-//! Реализовать класс PrintMaсhine, которой состоит из:
-//! ■ размера шрифта;
-//! ■ цвета шрифта;
-//! ■ семейства шрифта;
-//! ■ метода print(), который принимает текст и печатает его 
-//! соответствующим шрифтом 
+
+
+
+
+
+
+
+
+let text_marker =document.querySelector('#text_marker') as HTMLTextAreaElement //!поле для ввода
+let pencil =document.querySelector('#pencil') as HTMLImageElement //!маркер
+pencil.style.filter = 'drop-shadow(300px 0px #028302)'
+
+let inner_battery =document.querySelector('#inner_battery') as HTMLDivElement
+
+inner_battery.style.width = '50px'
+
+setTimeout(() => {
+    
+}, 5000);
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+//!  Написать функцию, которая принимает строку и выводит 
+//! статистику о ней: количество букв, количество цифр и 
+//! количество других знаков.
+
+
 
 
 //! Задание 1
@@ -21,6 +55,7 @@ import './style.css'
 //! ■ поле, которое хранит цвет маркера;
 //! ■ поле, которое хранит количество чернил в маркере (в про
 //! центах);
+
 //! ■ метод для печати (метод принимает строку и выводит 
 //! текст соответствующим цветом; текст выводится до тех 
 //! пор, пока в маркере есть чернила; один не пробельный 
@@ -33,43 +68,41 @@ let marker_info = document.getElementById('marker_info') as HTMLDivElement
 class Marker {
     color
     ink
-    constructor(color:string, ink:number){
+    constructor(color: string, ink: number) {
         this.color = color
         this.ink = ink //количество чернил (на 50 символов)
     }
 
-    print (text:string) {
+    print(text: string) {
         let num = this.ink
 
-        for (let i = 0; i < num; i++) {
-            if (text[i]=='_') {
-                symbols.innerHTML+=`<span style="color: ${this.color}; 
-                opacity: ${1+i/num};">${text[i]}</span>`
-            } else {
-                symbols.innerHTML+=`<span style="color: ${this.color}; 
-                opacity: ${1-i/num};">${text[i]}</span>`
-            }
+        for (let i = 0; i < text.length; i++) {
+            symbols.innerHTML += `<span style="color: ${this.color}; 
+            opacity: ${1 - i / num};">${text[i]}</span>`
         }
-        console.log(num);
+        console.log(text.length);
 
-        symbols.innerHTML+='<br>'
+        symbols.innerHTML += '<br>'
 
         marker_info.innerHTML += `
-        Цвет маркера:${this.color} <br>
-        Количество введенных символов: ${this.ink}<br>
-        Символов не напечаталось: ${text.length - this.ink} <br>
-        
+        Цвет маркера:<div style="color:${this.color}">${this.color}</div> <br>
+        Количество введенных символов: <span style="color: red; font-size:25px">
+        ${text.length < this.ink ? text.length : this.ink}</span><br>   
         <br>
         `
-}
+    }
 }
 
 let marker1 = new Marker('red', 15)
-marker1.print('1_2_3_4_5_6_9_8_8901234567890')
+marker1.print('1_  s dfg sdf sdf dfsdfsdf 2_3_4_5_6_')
 
 
 let marker2 = new Marker('orange', 25)
-marker2.print('123456789')
+marker2.print('12345678 90 ')
+
+        //  <div id="battery">
+        //     <div id="inner_battery" style="background-color:${this.color}; height: 30px; width: ${this.ink}px;"></div>
+        // </div> 
 
 
 
@@ -767,7 +800,7 @@ button_format_text.addEventListener('click',()=> {
 
  
  
-fetch('http://localhost:5173/JavaScriptForStudents/')
+// fetch('http://localhost:5173/JavaScriptForStudents/')
 
 //! в первой строке всегда получаем статус
 // .then((resp)=> resp.text())
