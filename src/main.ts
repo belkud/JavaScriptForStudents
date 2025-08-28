@@ -12,6 +12,10 @@ import './style.css'
 
 
 
+
+
+
+
 let text_marker =document.querySelector('#text_marker') as HTMLTextAreaElement //!поле для ввода
 let pencil =document.querySelector('#pencil') as HTMLImageElement //!маркер
 pencil.style.filter = 'drop-shadow(300px 0px #028302)'
