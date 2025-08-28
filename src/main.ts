@@ -20,9 +20,12 @@ let inner_battery =document.querySelector('#inner_battery') as HTMLDivElement
 
 inner_battery.style.width = '50px'
 
-setTimeout(() => {
-    
-}, 5000);
+let moveMarker = 0 
+
+text_marker.addEventListener('input', ()=> {
+    moveMarker+=7.3
+    pencil.style.marginLeft = moveMarker - 287 + 'px'
+})
 
 
 
