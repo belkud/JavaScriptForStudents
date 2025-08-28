@@ -20,6 +20,7 @@ let text_marker =document.querySelector('#text_marker') as HTMLTextAreaElement /
 let pencil =document.querySelector('#pencil') as HTMLImageElement //!маркер
 pencil.style.filter = 'drop-shadow(300px 0px #028302)'
 
+let quantaty_symbols =document.querySelector('#quantaty_symbols') as HTMLDivElement
 let inner_battery =document.querySelector('#inner_battery') as HTMLDivElement
 
 inner_battery.style.width = '50px'
@@ -27,6 +28,8 @@ inner_battery.style.width = '50px'
 let moveMarker = 0 
 
 text_marker.addEventListener('input', ()=> {
+    quantaty_symbols.innerHTML= `Символов напечатано: ${text_marker.value.length}`
+
     moveMarker+=7.3
     pencil.style.marginLeft = moveMarker - 287 + 'px'
 })
