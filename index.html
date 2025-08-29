@@ -21,8 +21,8 @@
 
 <img id="pencil" src="public/pencil.png" alt="">
 <div id="marker_container">
-  <div style="display: flex;">
-    <div id="markers_field">
+  <div style="display: flex;" >
+    <div style="width: 100%;">
       <div>Поле для печати</div>
       <div contenteditable="true" id="text_marker"></div>
     </div>
@@ -50,26 +50,45 @@
       padding: 10px;
       border-radius: 5px;
       border: 1px solid #000;
+      
+    }
+    #marker_container{
+          background-color: rgb(175, 173, 173);
+      width: 95%;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #000;
+     }
 
-  }
-  #text_marker {
-    width: 200px;
-    height: 50px;
-  }
+    
+    #text_marker {
+      background: aliceblue;
+      /* width: 100%; */
+      height: 100px;
+      border-radius: 5px;
+      margin: 10px;
+      margin-left: 0px;
+      border: 1.5px solid #1ac2f5;
+      font-family: monospace;
+    }
 
   #pencil {
     width: 45px;
     /* transition: .1s; */
     position: absolute;
-    margin-left: -281px;
+    margin-left: -1290px;
+    margin-top: 12px;
   }
+
+
 
 #battery {
   border: 2px solid white;
-  width: 100px;
+  width: 300px;
   height: 30px;
   margin-top: 10px;
   position: relative;
+  /* overflow: hidden; */
 }
 
 #battery::after {
@@ -78,7 +97,7 @@
     border: 2px solid white;
     border-left-color:rgb(175, 173, 173);
     border-radius: 0px 5px 5px 0px;
-    margin-left: 100px;
+    margin-left: 100%;
     margin-top: -21.5px;
     height: 10px;
     width: 8px;
@@ -87,18 +106,19 @@
 #inner_battery {
     background-color: #028302;
     height: 30px;
-    width: 0px;
-    max-width: 100px;
-    transition: 3s;
+    width: 300px;
+    /* max-width: 100px; */
+    transition: .1s;
     overflow: hidden;
     animation: changeBatetry 5s forwards;
 }
 
+/* 
 @keyframes changeBatetry {
     to {
-        width: 100px;
-    }
-}
+        width: 300px;
+    } 
+}  */
 
 </style>
 
@@ -125,29 +145,6 @@
 
 
 
-
-
-
-
-
-
-<div id="marker_symbol"></div>
-  <div id="marker_info"> </div>
-  <style>
-    #marker_symbol {
-      border: 1px solid aliceblue;
-      width: 500px;
-      /* display: flex; */
-      /* flex-wrap: wrap; */
-      margin: 20px;
-      padding: 10px;
-      font-size: 25px;
-      /* font-family:; */
-    }
-  </style>
-
- 
-<!-- _____________________________________________________________________ -->
 
 
 

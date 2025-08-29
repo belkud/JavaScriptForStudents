@@ -13,32 +13,39 @@ import './style.css'
 
 let text_marker =document.querySelector('#text_marker') as any //!поле для ввода
 let pencil =document.querySelector('#pencil') as HTMLImageElement //!маркер
-pencil.style.filter = 'drop-shadow(300px 0px #028302)'
+pencil.style.filter = 'drop-shadow(1300px 0px #028302)'
 
 let quantaty_symbols =document.querySelector('#quantaty_symbols') as HTMLDivElement
 let inner_battery =document.querySelector('#inner_battery') as HTMLDivElement
 
 
 
-let moveMarker = 0 
 
+let acc = 0 //! уменьшаем батарею с чернилами
+let moveMarker = 0 //! двигаем маркер-курсор
+let markerAcc = 1 //! изменение прозрачности текста
 text_marker.addEventListener('keydown', (e:any)=> {
-    quantaty_symbols.innerHTML= `Символов напечатано: ${text_marker.innerText.length+1}`
-e.preventDefault()
-    moveMarker+=7.3
-    pencil.style.marginLeft = moveMarker - 287 + 'px'
-    text_marker.innerHTML+=`<span style="color: ${changeColor.value};">${e.key}</span>`
-    console.log(text_marker.innerText);
+    e.preventDefault()
     
+    acc-=6
+    inner_battery.style.width = 300 + acc + 'px'
+    console.log(acc);
+    console.log(inner_battery.style.width );
+ 
+    markerAcc-=0.02 //! с каждым нажатием делаем текст более прозрачным
+    quantaty_symbols.innerHTML= `Символов напечатано: ${text_marker.innerText.length+1}`
+    moveMarker+=7.3
+    pencil.style.marginLeft = moveMarker - 1290 + 'px' //! двигаем маркер-курсор
+
+    text_marker.innerHTML+=`<span style="color: ${changeColor.value}; opacity:${markerAcc}">${e.key}</span>`
 })
 
 
 
 let changeColor =document.querySelector('#changeColor') as HTMLInputElement //! кнопка изменения цвета маркера и батареи
-
 changeColor.addEventListener('input', ()=> {
-    pencil.style.filter = `drop-shadow(300px 0px ${changeColor.value})`
-    inner_battery.style.background = changeColor.value
+    pencil.style.filter = `drop-shadow(1300px 0px ${changeColor.value})` //! изменение цвета карандаша
+    inner_battery.style.background = changeColor.value //!изменение цвета батарейки
     
 })
 
@@ -52,81 +59,7 @@ changeColor.addEventListener('input', ()=> {
 
 
 
-
-
-
-
-
-
-
-
-//!  Написать функцию, которая принимает строку и выводит 
-//! статистику о ней: количество букв, количество цифр и 
-//! количество других знаков.
-
-
-
-
-//! Задание 1
-//! Реализовать класс, описывающий простой маркер.  В классе 
-//! должны быть следующие компоненты:
-//! ■ поле, которое хранит цвет маркера;
-//! ■ поле, которое хранит количество чернил в маркере (в про
-//! центах);
-
-//! ■ метод для печати (метод принимает строку и выводит 
-//! текст соответствующим цветом; текст выводится до тех 
-//! пор, пока в маркере есть чернила; один не пробельный 
-//! символ – это 0,5% чернил в маркере).
-
-
-let symbols = document.getElementById('marker_symbol') as HTMLDivElement
-let marker_info = document.getElementById('marker_info') as HTMLDivElement
-
-class Marker {
-    color
-    ink
-    constructor(color: string, ink: number) {
-        this.color = color
-        this.ink = ink //количество чернил (на 50 символов)
-    }
-
-    print(text: string) {
-        let num = this.ink
-
-        for (let i = 0; i < text.length; i++) {
-            symbols.innerHTML += `<span style="color: ${this.color}; 
-            opacity: ${1 - i / num};">${text[i]}</span>`
-        }
-        // console.log(text.length);
-
-        symbols.innerHTML += '<br>'
-
-        marker_info.innerHTML += `
-        Цвет маркера:<div style="color:${this.color}">${this.color}</div> <br>
-        Количество введенных символов: <span style="color: red; font-size:25px">
-        ${text.length < this.ink ? text.length : this.ink}</span><br>   
-        <br>
-        `
-    }
-}
-
-let marker1 = new Marker('red', 15)
-marker1.print('1_  s dfg sdf sdf dfsdfsdf 2_3_4_5_6_')
-
-
-let marker2 = new Marker('orange', 25)
-marker2.print('12345678 90 ')
-
-        //  <div id="battery">
-        //     <div id="inner_battery" style="background-color:${this.color}; height: 30px; width: ${this.ink}px;"></div>
-        // </div> 
-
-
-
-
-
-
+ 
 
 //! Задание с телефонным номером
 let telephone_number = document.querySelector('#telephone_number') as HTMLInputElement
