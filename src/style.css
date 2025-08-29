@@ -62,6 +62,61 @@ body {
   }
 /*! Конец задания с телефонным номером */
 
+
+
+
+/* ! Задание с формой для ввода стилизованного текста */
+
+#textArea, #text_from_form  {
+  height: 120px;
+  width: 300px; 
+  border-radius: 5px;
+  padding: 5px;
+  margin-top: -20px;
+}
+
+#text_from_form {
+  background: rgb(175, 165, 165); 
+  margin-top: 25px;
+  border: 1px solid black;
+  /* color: transparent; */
+  /* transition: 3s !important; */
+}
+
+#print_text {
+  width: 310px;
+  background-image: url(/arrow.png);
+  background-size: 18px;
+  background-repeat: no-repeat;
+  background-position: 205px 3px;
+}
+
+.label {
+  margin-left: -5px;
+}
+
+.bold {
+  font-weight: 900;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.italic {
+   font-style: italic;
+}
+
+#change_color {
+  margin-left: 5px;
+  width: 30px;
+  padding: 0px !important;
+}
+
+
+/* ! Задание с формой для ввода стилизованного текста, завершение */
+
+
 /*! Работа с таблицей работников */
 
 #table_with_workers {

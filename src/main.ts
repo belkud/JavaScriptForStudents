@@ -11,27 +11,35 @@ import './style.css'
 
 
 
-
-
-
-
-
-let text_marker =document.querySelector('#text_marker') as HTMLTextAreaElement //!поле для ввода
+let text_marker =document.querySelector('#text_marker') as any //!поле для ввода
 let pencil =document.querySelector('#pencil') as HTMLImageElement //!маркер
 pencil.style.filter = 'drop-shadow(300px 0px #028302)'
 
 let quantaty_symbols =document.querySelector('#quantaty_symbols') as HTMLDivElement
 let inner_battery =document.querySelector('#inner_battery') as HTMLDivElement
 
-inner_battery.style.width = '50px'
+
 
 let moveMarker = 0 
 
-text_marker.addEventListener('input', ()=> {
-    quantaty_symbols.innerHTML= `Символов напечатано: ${text_marker.value.length}`
-
+text_marker.addEventListener('keydown', (e:any)=> {
+    quantaty_symbols.innerHTML= `Символов напечатано: ${text_marker.innerText.length+1}`
+e.preventDefault()
     moveMarker+=7.3
     pencil.style.marginLeft = moveMarker - 287 + 'px'
+    text_marker.innerHTML+=`<span style="color: ${changeColor.value};">${e.key}</span>`
+    console.log(text_marker.innerText);
+    
+})
+
+
+
+let changeColor =document.querySelector('#changeColor') as HTMLInputElement //! кнопка изменения цвета маркера и батареи
+
+changeColor.addEventListener('input', ()=> {
+    pencil.style.filter = `drop-shadow(300px 0px ${changeColor.value})`
+    inner_battery.style.background = changeColor.value
+    
 })
 
 
@@ -90,7 +98,7 @@ class Marker {
             symbols.innerHTML += `<span style="color: ${this.color}; 
             opacity: ${1 - i / num};">${text[i]}</span>`
         }
-        console.log(text.length);
+        // console.log(text.length);
 
         symbols.innerHTML += '<br>'
 
@@ -407,7 +415,7 @@ function findMiddlePrice(check:any[]) {
     let middlePrice = 0
     for (let i = 0; i < check.length; i++) {
         middlePrice+=(check[i].price)/check.length    
-        console.log(middlePrice);
+        // console.log(middlePrice);
     }
     return showCheck.innerHTML+=`Средняя стоимость одного товара = ${middlePrice}<br><br><br><br>`
 }
@@ -562,7 +570,6 @@ setTimeout(() => {
 
 }})
 
-console.log(data.value.split('-').reverse().join('.'));
 
 
 

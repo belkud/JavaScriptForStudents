@@ -10,9 +10,7 @@
   <body>
 
     <!-- <div> с файла JS_DZ_Modul_3_Week_11.html (JavaScript)</div> -->
-     
-
-
+ 
 <h2 class="title">
   Реализовать класс, описывающий маркер.  В классе должны быть следующие компоненты:
 ■ поле, которое хранит цвет маркера; <br>
@@ -24,13 +22,13 @@
 <img id="pencil" src="public/pencil.png" alt="">
 <div id="marker_container">
   <div style="display: flex;">
-    <div>
-      <label for="">Поле для печати</label>
-      <textarea id="text_marker"></textarea>
+    <div id="markers_field">
+      <div>Поле для печати</div>
+      <div contenteditable="true" id="text_marker"></div>
     </div>
     <div style="display: flex; flex-direction: column;">
       <label for="">Выберите цвет</label>
-      <input value="#028302" type="color">
+      <input id="changeColor" value="#028302" type="color">
     </div>
   </div>
   
@@ -45,9 +43,10 @@
 
 
 <style>
+ 
   #marker_container{
       background-color: rgb(175, 173, 173);
-      width: 300px;
+      width: 95%;
       padding: 10px;
       border-radius: 5px;
       border: 1px solid #000;
@@ -91,6 +90,7 @@
     width: 0px;
     max-width: 100px;
     transition: 3s;
+    overflow: hidden;
     animation: changeBatetry 5s forwards;
 }
 
@@ -146,13 +146,7 @@
     }
   </style>
 
-    
-
-    <style>
-        
-    </style>
-
-
+ 
 <!-- _____________________________________________________________________ -->
 
 
@@ -257,7 +251,7 @@ setTimeout (()=> {
 <!-- !!!!!!!!!!!!!!!!!! Конец задания с телефонным номером!!!!!!!!!!!!!!!!!!!! -->
 
 
-<!-- !!!!!!!!!!!!!!!!!! Задание с вводом стилизованного текста!!!!!!!!!!!!!!!!!!!! -->
+<!-- !!!!!!!!!!!!!!!!!! Задание с формой для ввода стилизованного текста!!!!!!!!!!!!!!!!!!!! -->
 
 <h2 class="title">Создать html-страницу с формой для ввода стилизованного 
   текста. После заполнения формы, вывести текст на экран в соот
@@ -294,60 +288,10 @@ setTimeout (()=> {
 <br>
 <div  style="margin-bottom: -20px;">Результат:</div>
 <div id="text_from_form"></div> <!-- Вывод текста с textarea -->
-
-<style>
-#textArea, #text_from_form  {
-  height: 120px;
-  width: 300px; 
-  border-radius: 5px;
-  padding: 5px;
-  margin-top: -20px;
-}
-
-#text_from_form {
-  background: rgb(175, 165, 165); 
-  margin-top: 25px;
-  border: 1px solid black;
-  /* color: transparent; */
-  /* transition: 3s !important; */
-}
-
-#print_text {
-  width: 310px;
-  background-image: url(/arrow.png);
-  background-size: 18px;
-  background-repeat: no-repeat;
-  background-position: 205px 3px;
-}
-
-.label {
-  margin-left: -5px;
-}
-
-.bold {
-  font-weight: 900;
-}
-
-.underline {
-  text-decoration: underline;
-}
-
-.italic {
-   font-style: italic;
-}
-
-#change_color {
-  margin-left: 5px;
-  width: 30px;
-  padding: 0px !important;
-}
-
-</style>
-
-
+ 
 
 <br><br><hr>
-<!-- !!!!!!!!!!!!!!!!!! задание с вводом стилизованного текста, завершение !!!!!!!!!!!!!!!!!!!! -->
+<!-- !!!!!!!!!!!!!!!!!! Задание с формой для ввода стилизованного текста, завершение !!!!!!!!!!!!!!!!!!!! -->
 
 
 
