@@ -13,47 +13,75 @@ import './style.css'
 
 let text_marker =document.querySelector('#text_marker') as any //!поле для ввода
 let pencil =document.querySelector('#pencil') as HTMLImageElement //!маркер
-pencil.style.filter = 'drop-shadow(1300px 0px #028302)'
 
-let quantaty_symbols =document.querySelector('#quantaty_symbols') as HTMLDivElement
+let quantaty_symbols =document.querySelector('#quantaty_symbols') as HTMLDivElement //!кол-во символов
 let inner_battery =document.querySelector('#inner_battery') as HTMLDivElement
+let battery_percents =document.querySelector('#battery_percents') as HTMLDivElement
 
 
 
 
 let acc = 0 //! уменьшаем батарею с чернилами
-let moveMarker = 0 //! двигаем маркер-курсор
 let markerAcc = 1 //! изменение прозрачности текста
+let moveMarker = 0 //! двигаем маркер-курсор
+let symbols = 1 //! количество напечатанных символов
+
+let percents = 100 as any
+
 text_marker.addEventListener('keydown', (e:any)=> {
     e.preventDefault()
     
-    acc-=6
-    inner_battery.style.width = 300 + acc + 'px'
-    console.log(acc);
-    console.log(inner_battery.style.width );
- 
-    markerAcc-=0.02 //! с каждым нажатием делаем текст более прозрачным
-    quantaty_symbols.innerHTML= `Символов напечатано: ${text_marker.innerText.length+1}`
-    moveMarker+=7.3
-    pencil.style.marginLeft = moveMarker - 1290 + 'px' //! двигаем маркер-курсор
+    
+    battery_percents.innerHTML =percents + '%'
 
+    acc-=6 //! уменьшаем батарею с чернилами
+    inner_battery.style.width = 300 + acc + 'px'
+
+    quantaty_symbols.innerHTML= `Символов напечатано: ${symbols}`
+    
+    moveMarker+=7.3 //! двигаем маркер-курсор
+    pencil.style.marginLeft = moveMarker - 1290 + 'px' 
+    
+    
+    markerAcc-=0.02 //! с каждым нажатием делаем текст более прозрачным
     text_marker.innerHTML+=`<span style="color: ${changeColor.value}; opacity:${markerAcc}">${e.key}</span>`
+
+if (parseInt(inner_battery.style.width)<=0) {
+    moveMarker=0
+    symbols+=0
+    percents=0
+} else {
+ symbols+=1
+ percents-=2
+}
 })
 
 
 
 let changeColor =document.querySelector('#changeColor') as HTMLInputElement //! кнопка изменения цвета маркера и батареи
+
 changeColor.addEventListener('input', ()=> {
     pencil.style.filter = `drop-shadow(1300px 0px ${changeColor.value})` //! изменение цвета карандаша
     inner_battery.style.background = changeColor.value //!изменение цвета батарейки
-    
+    refuelInk()    
 })
 
 
+let refuel_marker =document.querySelector('#refuel_marker') as HTMLButtonElement //! кнопка заправки маркера и батареи
+
+refuel_marker.addEventListener('click', ()=> {
+    refuelInk()
+})
 
 
-
-
+function refuelInk() {
+    acc = 0  
+    markerAcc = 1 //! 'восстаналиваем' чернила
+    inner_battery.style.width = 300 + 'px' //! 'восстаналиваем' батарею
+    battery_percents.innerHTML = 100 + '%'
+    percents = 100
+    console.log(acc);
+}
 
  
 
