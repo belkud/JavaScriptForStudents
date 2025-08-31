@@ -25,13 +25,25 @@ let acc = 0 //! уменьшаем батарею с чернилами
 let markerAcc = 1 //! изменение прозрачности текста
 let moveMarker = 0 //! двигаем маркер-курсор
 let symbols = 1 //! количество напечатанных символов
+let moveMarkerHeight = 0 //! двигаем маркер-курсор
+
 
 let percents = 100 as any
 
 text_marker.addEventListener('keydown', (e:any)=> {
     e.preventDefault()
     
+    console.log(text_marker.innerText);
     
+    // for (let i = 0; i < text_marker.innerText.length; i++) {
+    //     if (text_marker.innerText[i] == 'r') {
+    //         text_marker.innerText[i] = 'R'
+    //         console.log(text_marker.innerText[i]);
+    //     }
+        
+        
+    // }
+
     battery_percents.innerHTML =percents + '%'
 
     acc-=6 //! уменьшаем батарею с чернилами
@@ -39,15 +51,26 @@ text_marker.addEventListener('keydown', (e:any)=> {
 
     quantaty_symbols.innerHTML= `Символов напечатано: ${symbols}`
     
-    moveMarker+=7.3 //! двигаем маркер-курсор
-    pencil.style.marginLeft = moveMarker - 1290 + 'px' 
     
+    if ((parseInt(pencil.style.marginLeft)) > -1045) {
+        moveMarker=0
+        moveMarkerHeight+=18
+        
+        pencil.style.marginLeft ='-1290px'
+        pencil.style.marginTop =moveMarkerHeight + 'px'
+    } else {
+        moveMarker+=7.2 //! двигаем маркер-курсор
+        pencil.style.marginLeft = moveMarker - 1290 + 'px' 
+    }
+
+
+
     
     markerAcc-=0.02 //! с каждым нажатием делаем текст более прозрачным
     text_marker.innerHTML+=`<span style="color: ${changeColor.value}; opacity:${markerAcc}">${e.key}</span>`
 
 if (parseInt(inner_battery.style.width)<=0) {
-    moveMarker=0
+    // moveMarker+=0
     symbols+=0
     percents=0
 } else {
