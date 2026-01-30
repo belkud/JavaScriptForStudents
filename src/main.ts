@@ -1,15 +1,29 @@
 import './style.css'
 
+let yourLocation = document.getElementById('yourLocation') as HTMLDivElement
+ 
 
+async function getLocation() {
 
+    try {
+       let location = await fetch('http://ip-api.com/json/')
+            .then(resp => resp.json());
+        console.log(location);  
+        yourLocation.innerHTML = `
+        страна: ${location.country} <br>
+        регион: ${location.regionName} <br>
+        город: ${location.city} <br>
+        провайдер: ${location.as}
+        `
+        return location;
+    } catch (error) {
+        console.error('Ошибка:', error);
+        return null;
+    }
+}
 
-
-
-
-
-
-
-
+getLocation()
+ 
 
 let text_marker =document.querySelector('#text_marker') as any //!поле для ввода
 let pencil =document.querySelector('#pencil') as HTMLImageElement //!маркер
